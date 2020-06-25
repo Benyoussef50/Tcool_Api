@@ -1200,3 +1200,17 @@ Wrong user name or password [28000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 55 more
+2020-06-25 16:58:06 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM INTERVENTION 
+SELECT[*] * FROM MESSAGE"
+Syntax error in SQL statement "SELECT * FROM INTERVENTION 
+SELECT[*] * FROM MESSAGE"; SQL statement:
+SELECT * FROM INTERVENTION 
+SELECT * FROM MESSAGE [42000-200]
+2020-06-25 16:58:09 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM INTERVENTION 
+SELECT[*] * FROM MESSAGE"
+Syntax error in SQL statement "SELECT * FROM INTERVENTION 
+SELECT[*] * FROM MESSAGE"; SQL statement:
+SELECT * FROM INTERVENTION 
+SELECT * FROM MESSAGE [42000-200]
