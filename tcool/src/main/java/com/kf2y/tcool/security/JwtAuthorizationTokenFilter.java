@@ -35,9 +35,10 @@ public class JwtAuthorizationTokenFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 
+		log.debug("Processing authentication for '{}'", request.getRequestURL());
 		String headerAuth = request.getHeader("Authorization");
 	
-		if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer")) {
+		if (headerAuth !=null && headerAuth.startsWith("Bearer ")) {
 			String authToken = headerAuth.substring(7);
 			String username = getUsername(authToken);
 			

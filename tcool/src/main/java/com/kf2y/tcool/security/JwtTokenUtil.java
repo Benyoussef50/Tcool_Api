@@ -25,7 +25,7 @@ public class JwtTokenUtil implements Serializable{
 	
 	private Clock clock = DefaultClock.INSTANCE;
 	
-	@Value("${app.jwt.secret")
+	@Value("${jwt.secret}")
 	private String secret;
 	
 	public String getUsernameFromToken(final String token) {

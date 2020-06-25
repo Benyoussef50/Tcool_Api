@@ -2,11 +2,13 @@ package com.kf2y.tcool.security;
 
 import java.io.Serializable;
 
-import com.kf2y.tcool.service.UserDetailsImpl;
+import org.springframework.security.core.userdetails.UserDetails;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class JwtAuthenticationResponse implements Serializable{/**
 	 * 
 	 */
@@ -16,6 +18,6 @@ public class JwtAuthenticationResponse implements Serializable{/**
 	private String token;
 	
 	// current user connected
-	private UserDetailsImpl currentUser;
+	private UserDetails currentUser;
 
 }
