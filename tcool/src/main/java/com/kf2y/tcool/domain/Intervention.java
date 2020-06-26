@@ -29,9 +29,9 @@ public class Intervention extends AbstractAuditingEntity {
 
 	private String status;
 
-	private byte audio;
+	private byte[] audio;
 
-	private byte images;
+	private byte[] images;
 
 	private String location;
 
