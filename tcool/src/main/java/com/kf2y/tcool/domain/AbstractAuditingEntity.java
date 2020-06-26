@@ -1,7 +1,6 @@
 package com.kf2y.tcool.domain;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -26,7 +25,7 @@ public abstract class AbstractAuditingEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @CreatedBy
-    @Column(name = "created_by", nullable = false, length = 50, updatable = false)
+    @Column(name = "created_by", nullable = true, length = 50, updatable = false)
     private String createdBy;
 
     @CreatedDate

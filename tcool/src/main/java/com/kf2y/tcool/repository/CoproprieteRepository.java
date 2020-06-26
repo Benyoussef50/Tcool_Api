@@ -6,4 +6,6 @@ import com.kf2y.tcool.domain.Copropriete;
 
 public interface CoproprieteRepository extends JpaRepository<Copropriete, Long> {
 
+	
+	
 }
