@@ -2,6 +2,7 @@ package com.kf2y.tcool.domain;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
@@ -30,7 +31,7 @@ public abstract class AbstractAuditingEntity implements Serializable {
 
     @CreatedDate
     @Column(name = "created_date", nullable = true, updatable = false)
-    private Instant createdDate = Instant.now();
+    private Date createdDate = new Date();
 
     @LastModifiedBy
     @Column(name = "last_modified_by", length = 50)
@@ -38,7 +39,7 @@ public abstract class AbstractAuditingEntity implements Serializable {
 
     @LastModifiedDate
     @Column(name = "last_modified_date")
-    private Instant lastModifiedDate = Instant.now();
+    private Date lastModifiedDate = new Date();
 
     @Version
     private Long version;

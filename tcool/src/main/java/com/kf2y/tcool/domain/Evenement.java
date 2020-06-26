@@ -1,11 +1,13 @@
 package com.kf2y.tcool.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -31,6 +33,12 @@ public class Evenement extends AbstractAuditingEntity {
 	private String status;
 
 	private Date duration;
+	
+	@OneToMany()
+	private List<EvenementDocs> documents;
+	
+	@OneToMany()
+	private List<Message> msgEvents;
 
 	public Evenement() {
 	}

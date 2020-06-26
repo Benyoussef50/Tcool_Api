@@ -1,9 +1,12 @@
 package com.kf2y.tcool.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -29,6 +32,10 @@ public class Copropriete extends AbstractAuditingEntity {
 	private int nbResidents;
 
 	private String city;
+	
+	// permet d'avoir une trace sur les résidents de la coproprieté
+	@OneToMany()
+	private List<Compte> listResidents;
 
 	public Copropriete() {
 	}
