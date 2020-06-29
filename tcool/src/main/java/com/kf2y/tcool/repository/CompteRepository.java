@@ -9,4 +9,5 @@ import com.kf2y.tcool.domain.Compte;
 public interface CompteRepository extends JpaRepository<Compte, Long> {
 
 	public Compte findByEmail(String email);
+	public Boolean existsByEmail(String email);
 }

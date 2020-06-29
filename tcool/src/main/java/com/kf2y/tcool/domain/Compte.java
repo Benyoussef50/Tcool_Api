@@ -65,4 +65,15 @@ public class Compte extends AbstractAuditingEntity {
 	public Compte() {
 	}
 
+
+	public Compte(String createdBy ,String firstName, String lastName, String email, String phone, String password) {
+		super();
+		super.setCreatedBy(createdBy);
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phone = phone;
+		this.password = password;
+	}
+
 }
