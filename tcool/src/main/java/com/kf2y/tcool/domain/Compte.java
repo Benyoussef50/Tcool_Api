@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import lombok.Getter;
@@ -34,7 +35,7 @@ public class Compte extends AbstractAuditingEntity {
 	private String password;
 	
 	// mon rôle
-	@OneToMany()
+	@ManyToMany()
 	private List<AppRole> myRole;
 	
 	// ma liste de discussion
