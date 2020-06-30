@@ -13,13 +13,13 @@ INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 (2, 1)
 ;
 
-INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`) VALUES
-('Robb', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1'),
-('Robb', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2'),
-('Robb', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3'),
-('Robb', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4'),
-('Robb', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5'),
-('Robb', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6'),
-('Robb', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7'),
-('Robb', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8'),
-('Robb', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9');
+INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`) VALUES
+('Robb', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public'),
+('Robb', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public'),
+('Robb', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public'),
+('Robb', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public'),
+('Robb', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public'),
+('Robb', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public'),
+('Robb', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public'),
+('Robb', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public'),
+('Robb', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public');
