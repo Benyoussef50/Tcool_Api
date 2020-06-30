@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,6 +37,7 @@ public class Intervention extends AbstractAuditingEntity {
 
 	private String location;
 
+	@JsonIgnore
 	@OneToMany()
 	private List<Message> msgInterventions;
 	public Intervention() {
