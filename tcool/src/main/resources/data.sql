@@ -12,3 +12,14 @@ INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 (1, 1),
 (2, 1)
 ;
+
+INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`) VALUES
+('Mehdi', now(), now(), 'Intervention 1', 'EN COURS', 'Intervention 1'),
+('Mehdi', now(), now(), 'Intervention 2', 'EN COURS', 'Intervention 2'),
+('Mehdi', now(), now(), 'Intervention 3', 'EN COURS', 'Intervention 3'),
+('Mehdi', now(), now(), 'Intervention 4', 'EN COURS', 'Intervention 4'),
+('Mehdi', now(), now(), 'Intervention 5', 'CLOTUREE', 'Intervention 5'),
+('Mehdi', now(), now(), 'Intervention 6', 'CLOTUREE', 'Intervention 6'),
+('Mehdi', now(), now(), 'Intervention 7', 'ANNULEE', 'Intervention 7'),
+('Mehdi', now(), now(), 'Intervention 8', 'ANNULEE', 'Intervention 8'),
+('Mehdi', now(), now(), 'Intervention 9', 'ANNULEE', 'Intervention 9'); 
