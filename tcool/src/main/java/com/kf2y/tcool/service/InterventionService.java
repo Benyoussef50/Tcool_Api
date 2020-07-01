@@ -11,7 +11,12 @@ public interface InterventionService {
 	/**
 	 * Add new intervention
 	 */
-	public Intervention save(Intervention intervemtion);
+	public Intervention save(Intervention intervention);
+	
+	/**
+	 * Update status
+	 */
+	public Intervention update(String status, Intervention body);
 
 	/**
 	 * Find by id
