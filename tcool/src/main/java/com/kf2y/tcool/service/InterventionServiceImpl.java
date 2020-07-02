@@ -1,17 +1,21 @@
 package com.kf2y.tcool.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
+
 
 import com.kf2y.tcool.domain.Intervention;
 import com.kf2y.tcool.repository.InterventionRepository;
+import com.kf2y.tcool.service.exception.ElementNotFoundException;
 
 @Service
-@Transactional
+
 public class InterventionServiceImpl implements InterventionService {
 
 	@Autowired
@@ -56,6 +60,21 @@ public class InterventionServiceImpl implements InterventionService {
 	@Override
 	public void remove(Long id) {
 		interventionRepository.deleteById(id);
+
+	}
+
+
+	@Transactional
+	@Override
+	public Intervention update(String status, Long id) {
+		Optional<Intervention> intervention = interventionRepository.findById(id);
+		if (intervention.isPresent()) {
+			Intervention inter = intervention.get();			
+			inter.setStatus(status);
+			return interventionRepository.save(inter);
+		} else {
+			throw new ElementNotFoundException(Intervention.class, id);
+		}
 
 	}
 
