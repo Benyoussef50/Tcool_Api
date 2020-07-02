@@ -2,7 +2,6 @@ package com.kf2y.tcool.service;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +21,7 @@ public class DiscussionServiceImpl implements DiscussionService {
 		// TODO Auto-generated method stub
 		return discussRepo.save(discussion);
 	}
+	
 
 	@Override
 	public void delete(Long id) {
