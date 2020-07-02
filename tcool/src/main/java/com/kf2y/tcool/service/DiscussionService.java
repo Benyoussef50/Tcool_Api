@@ -22,5 +22,6 @@ public interface DiscussionService {
 	
 	// liste des discussions rejetées
 	public List<Discussion> getDiscussionRejetees();
+
 	
 }

@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kf2y.tcool.domain.Discussion;
+import com.kf2y.tcool.exception.ResourceNotFoundException;
 import com.kf2y.tcool.service.DiscussionServiceImpl;
 
 @RestController
@@ -33,6 +35,20 @@ public class DiscussionController {
 	@PostMapping("/save-discussion")
 	public Discussion saveDiscuss(@RequestBody Discussion discuss) {
 		return discussService.save(discuss);
+	}
+	
+	/************************** Update a discussion **********************/
+	@Transactional
+	@PutMapping("/update/{id}")
+	public Discussion updateDiscussion(@PathVariable Long id, @RequestBody Discussion discuss) 
+		throws ResourceNotFoundException{
+		Discussion d = discussService.getById(discuss.getIdDiscussion());
+		if(d == null) throw new ResourceNotFoundException("Discussion not found on :: " + discuss.getIdDiscussion());
+		
+		d = discuss;
+		final Discussion updateDiscuss = discussService.save(d);
+		
+		return updateDiscuss;
 	}
 	
 	/*********************** Delete discussion ********************/
