@@ -60,15 +60,15 @@ public class InterventionController {
 		return impl.findInterventionById(id);
 	}
 	
-	@PutMapping("/annuler-status")
+	@PutMapping("/annuler-status/{id}")
 	@Transactional
-	public Intervention annulerStatus(@RequestBody Intervention body) {
-		 return impl.update("ANNULEE", body);
+	public Intervention annulerStatus(@PathVariable Long id) {
+		 return impl.update("ANNULEE", id);
 	}
 	
-	@PutMapping("/cloturer-status")
+	@PutMapping("/cloturer-status/{id}")
 	@Transactional
-	public Intervention cloturerStatus(@RequestBody Intervention body) {
-		return impl.update("CLOTUREE", body);
+	public Intervention cloturerStatus(@PathVariable Long id) {
+		return impl.update("CLOTUREE", id);
 	}
 }

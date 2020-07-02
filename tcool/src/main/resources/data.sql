@@ -3,9 +3,9 @@ INSERT INTO `APP_Role` (`id`, `role`) VALUES
 (2, 'SYNDIC'),
 (3, 'INTERVENANT');
 
-INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `password`, `phone`, `created_date`,`last_modified_date` ) VALUES
-('KF2Y','mehdi','benyoussef','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',now(),now()),
-('KF2Y','ROBBILE','KONDE-MANE','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now())
+INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `password`, `phone`, `created_date`,`last_modified_date`,`version` ) VALUES
+('KF2Y','mehdi','benyoussef','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',now(),now(),0),
+('KF2Y','ROBBILE','KONDE-MANE','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
 ;
 
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
@@ -33,4 +33,6 @@ INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, 
 ('Mehdi', now(), now(), 'Intervention 6', 'CLOTUREE', 'Intervention 6',0),
 ('Mehdi', now(), now(), 'Intervention 7', 'ANNULEE', 'Intervention 7',0),
 ('Mehdi', now(), now(), 'Intervention 8', 'ANNULEE', 'Intervention 8',0),
-('Mehdi', now(), now(), 'Intervention 9', 'ANNULEE', 'Intervention 9',0);  
+('Mehdi', now(), now(), 'Intervention 9', 'ANNULEE', 'Intervention 9',0),
+('Mehdi', now(), now(), 'Intervention 10', 'EN COURS', 'Intervention 10',0);
+

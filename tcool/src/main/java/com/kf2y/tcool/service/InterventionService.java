@@ -16,7 +16,7 @@ public interface InterventionService {
 	/**
 	 * Update status
 	 */
-	public Intervention update(String status, Intervention body);
+	public Intervention update(String status, Long id);
 
 	/**
 	 * Find by id

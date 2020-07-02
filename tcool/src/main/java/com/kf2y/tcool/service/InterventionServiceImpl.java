@@ -66,14 +66,14 @@ public class InterventionServiceImpl implements InterventionService {
 
 	@Transactional
 	@Override
-	public Intervention update(String status, Intervention body) {
-		Optional<Intervention> intervention = interventionRepository.findById(body.getIdIntervention());
+	public Intervention update(String status, Long id) {
+		Optional<Intervention> intervention = interventionRepository.findById(id);
 		if (intervention.isPresent()) {
 			Intervention inter = intervention.get();			
 			inter.setStatus(status);
 			return interventionRepository.save(inter);
 		} else {
-			throw new ElementNotFoundException(Intervention.class, body.getIdIntervention());
+			throw new ElementNotFoundException(Intervention.class, id);
 		}
 
 	}
