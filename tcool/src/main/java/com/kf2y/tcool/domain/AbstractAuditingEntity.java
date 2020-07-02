@@ -1,7 +1,6 @@
 package com.kf2y.tcool.domain;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Column;
