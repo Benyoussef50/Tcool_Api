@@ -77,7 +77,7 @@ public class AuthController {
 			String refreshToken = jwtTokenUtils.refreshToken(token);
 			return ResponseEntity.ok(new JwtAuthenticationResponse(refreshToken, user));
 		} else {
-			return null;
+			return ResponseEntity.ok("not refreshed");
 		}
 	}
 
