@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
-
 import com.kf2y.tcool.domain.Intervention;
+import com.kf2y.tcool.domain.Message;
 import com.kf2y.tcool.repository.InterventionRepository;
 import com.kf2y.tcool.service.exception.ElementNotFoundException;
 
@@ -63,13 +63,24 @@ public class InterventionServiceImpl implements InterventionService {
 
 	}
 
+	public Intervention addMessages(Long id, Message msg) {
+		Optional<Intervention> intervention = interventionRepository.findById(id);
+		if (intervention.isPresent()) {
+			Intervention inter = intervention.get();
+			inter.getMsgInterventions().add(msg);
+			return interventionRepository.save(inter);
+		} else {
+			throw new ElementNotFoundException(Intervention.class, id);
+
+		}
+	}
 
 	@Transactional
 	@Override
 	public Intervention update(String status, Long id) {
 		Optional<Intervention> intervention = interventionRepository.findById(id);
 		if (intervention.isPresent()) {
-			Intervention inter = intervention.get();			
+			Intervention inter = intervention.get();
 			inter.setStatus(status);
 			return interventionRepository.save(inter);
 		} else {

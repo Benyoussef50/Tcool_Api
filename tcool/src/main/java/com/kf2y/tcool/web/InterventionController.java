@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kf2y.tcool.domain.Intervention;
+import com.kf2y.tcool.domain.Message;
 import com.kf2y.tcool.service.InterventionServiceImpl;
 
 @RestController
@@ -27,7 +28,6 @@ public class InterventionController {
 	public Intervention saveInter(@RequestBody Intervention intervention) {
 		return impl.save(intervention);
 	}
-	
 
 	@DeleteMapping("/delete/{id}")
 	@Transactional
@@ -39,36 +39,42 @@ public class InterventionController {
 	public List<Intervention> getAll() {
 		return impl.findAllIntervention();
 	}
-	
+
 	@GetMapping("/encours")
-	public List<Intervention> getAllEnCours(){
+	public List<Intervention> getAllEnCours() {
 		return impl.findInterEnCours();
 	}
-	
+
 	@GetMapping("/cloturees")
-	public List<Intervention> getAllCloturees(){
+	public List<Intervention> getAllCloturees() {
 		return impl.findInterCloturees();
 	}
-	
+
 	@GetMapping("/annulees")
-	public List<Intervention> getAllAnnulees(){
+	public List<Intervention> getAllAnnulees() {
 		return impl.findInterAnnulees();
 	}
-	
+
 	@GetMapping("/{id}")
 	public Intervention getById(@PathVariable Long id) {
 		return impl.findInterventionById(id);
 	}
-	
+
 	@PutMapping("/annuler-status/{id}")
 	@Transactional
 	public Intervention annulerStatus(@PathVariable Long id) {
-		 return impl.update("ANNULEE", id);
+		return impl.update("ANNULEE", id);
 	}
-	
+
 	@PutMapping("/cloturer-status/{id}")
 	@Transactional
 	public Intervention cloturerStatus(@PathVariable Long id) {
 		return impl.update("CLOTUREE", id);
+	}
+
+	@PutMapping("/add-message/{id}")
+	@Transactional
+	public Intervention addMessage(@PathVariable Long id, @RequestBody Message msg) {
+		return impl.addMessages(id, msg);
 	}
 }
