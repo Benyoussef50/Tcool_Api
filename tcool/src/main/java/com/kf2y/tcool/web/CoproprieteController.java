@@ -40,7 +40,7 @@ public class CoproprieteController {
 		copropServ.delete(id);
 	}
 	
-	@PostMapping("/save-copropriete")
+	@PostMapping("/save")
 	public Copropriete saveCopropriete(@RequestBody Copropriete cop) {
 		return copropServ.save(cop);
 	}

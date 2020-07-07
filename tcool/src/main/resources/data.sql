@@ -31,3 +31,13 @@ INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, 
 ('Mehdi', now(), now(), 'Intervention 4', 'CLOTUREE', 'Intervention 4',0,'20 Rue Ghana, Rabat, Morocco'),
 ('Mehdi', now(), now(), 'Intervention 5', 'ANNULEE', 'Intervention 5',0,'Avenue Sidi Moussa, Salé, Morocco');
 
+INSERT INTO `Copropriete` (`created_by`, `created_date`, `last_modified_date`, `name`,`details`, `city`,`version`,`nb_residents`) VALUES
+('Robb', now(), now(), 'Copropriete 1', 'EN COURS', 'Casa',0,14),
+('Robb', now(), now(), 'Copropriete 2', 'EN COURS', 'Marrakech',0,14),
+('Robb', now(), now(), 'Copropriete 3', 'EN COURS', 'Rabat',0,8),
+('Robb', now(), now(), 'Copropriete 4', 'CLOTUREE', 'Safi',0,4),
+('Robb', now(), now(), 'Copropriete 5', 'ANNULEE', 'Settat',0,96);
+
+INSERT INTO `copropriete_list_residents` (`copropriete_id_copropriete`, `list_residents_id_compte`) VALUES
+(1, 1),
+(2, 2);
