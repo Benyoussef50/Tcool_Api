@@ -3,6 +3,7 @@ package com.kf2y.tcool.service;
 import java.util.List;
 
 import com.kf2y.tcool.domain.Intervention;
+import com.kf2y.tcool.domain.Message;
 
 public interface InterventionService {
 
@@ -53,5 +54,6 @@ public interface InterventionService {
 	 */
 
 	public void remove(Long id);
+	public Intervention addMessages(Long id, Message msg);
 
 }

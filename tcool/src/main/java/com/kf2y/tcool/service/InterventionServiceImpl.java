@@ -15,7 +15,6 @@ import com.kf2y.tcool.repository.InterventionRepository;
 import com.kf2y.tcool.service.exception.ElementNotFoundException;
 
 @Service
-
 public class InterventionServiceImpl implements InterventionService {
 
 	@Autowired
@@ -63,6 +62,7 @@ public class InterventionServiceImpl implements InterventionService {
 
 	}
 
+	@Override
 	public Intervention addMessages(Long id, Message msg) {
 		Optional<Intervention> intervention = interventionRepository.findById(id);
 		if (intervention.isPresent()) {

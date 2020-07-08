@@ -3,6 +3,7 @@ package com.kf2y.tcool.domain;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,10 +35,10 @@ public class Evenement extends AbstractAuditingEntity {
 
 	private Date duration;
 	
-	@OneToMany()
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<EvenementDocs> documents;
 	
-	@OneToMany()
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Message> msgEvents;
 
 	public Evenement() {
