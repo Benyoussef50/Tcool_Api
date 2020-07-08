@@ -31,13 +31,29 @@ INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, 
 ('Mehdi', now(), now(), 'Intervention 4', 'CLOTUREE', 'Intervention 4',0,'20 Rue Ghana, Rabat, Morocco'),
 ('Mehdi', now(), now(), 'Intervention 5', 'ANNULEE', 'Intervention 5',0,'Avenue Sidi Moussa, Salé, Morocco');
 
-INSERT INTO `Copropriete` (`created_by`, `created_date`, `last_modified_date`, `name`,`details`, `city`,`version`,`nb_residents`) VALUES
-('Robb', now(), now(), 'Copropriete 1', 'EN COURS', 'Casa',0,14),
-('Robb', now(), now(), 'Copropriete 2', 'EN COURS', 'Marrakech',0,14),
-('Robb', now(), now(), 'Copropriete 3', 'EN COURS', 'Rabat',0,8),
-('Robb', now(), now(), 'Copropriete 4', 'CLOTUREE', 'Safi',0,4),
-('Robb', now(), now(), 'Copropriete 5', 'ANNULEE', 'Settat',0,96);
+INSERT INTO `Copropriete` (`created_by`, `created_date`, `last_modified_date`, `name`,`details`, `city`,`version`,`nb_residents`, `syndic_id_compte`) VALUES
+('Robb', now(), now(), 'Copropriete 1', 'EN COURS', 'Casa',0,14, '1'),
+('Robb', now(), now(), 'Copropriete 2', 'EN COURS', 'Marrakech',0,14, '1'),
+('Robb', now(), now(), 'Copropriete 3', 'EN COURS', 'Rabat',0,8,'1'),
+('Robb', now(), now(), 'Copropriete 4', 'CLOTUREE', 'Safi',0,4,'1'),
+('Robb', now(), now(), 'Copropriete 5', 'ANNULEE', 'Settat',0,96,'1');
 
 INSERT INTO `copropriete_list_residents` (`copropriete_id_copropriete`, `list_residents_id_compte`) VALUES
 (1, 1),
 (2, 2);
+
+INSERT INTO `Operation` (`created_by`, `created_date`, `last_modified_date`, `title`,`type_op`, `amount`,`version`) VALUES
+('Robb', now(), now(), 'Opération 1', 'CREDIT', 400, 0),
+('Robb', now(), now(), 'Opération 2', 'CREDIT', 150, 0),
+('Robb', now(), now(), 'Opération 3', 'CREDIT', 120, 0),
+('Robb', now(), now(), 'Opération 4', 'CREDIT', 130, 0),
+('Robb', now(), now(), 'Opération 5', 'DEBIT', 80, 0),
+('Robb', now(), now(), 'Opération 6', 'CREDIT', 44, 0),
+('Robb', now(), now(), 'Opération 7', 'DEBIT', 50, 0),
+('Robb', now(), now(), 'Opération 8', 'CREDIT', 80, 0),
+('Robb', now(), now(), 'Opération 9', 'CREDIT', 96, 0),
+('Robb', now(), now(), 'Opération 10', 'DEBIT', 100, 0),
+('Robb', now(), now(), 'Opération 11', 'DEBIT', 100, 0),
+('Robb', now(), now(), 'Opération 12', 'DEBIT', 200, 0),
+('Robb', now(), now(), 'Opération 13', 'DEBIT', 200, 0),
+('Robb', now(), now(), 'Opération 14', 'CREDIT', 200, 0);

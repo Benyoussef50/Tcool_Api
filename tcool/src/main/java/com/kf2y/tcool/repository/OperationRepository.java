@@ -8,5 +8,5 @@ import com.kf2y.tcool.domain.Operation;
 
 public interface OperationRepository extends JpaRepository<Operation, Long>{
 
-	public List<Operation> findByType(String type);
+	public List<Operation> findByTypeOp(String type);
 }

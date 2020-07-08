@@ -26,7 +26,7 @@ public class Operation extends AbstractAuditingEntity {
 
 	private double amount;
 
-	private String type;
+	private String typeOp;
 
 	public Operation() {
 	}

@@ -44,13 +44,13 @@ public class OperationServiceImpl implements OperationService {
 	@Override
 	public List<Operation> getDebitOperations() {
 		// TODO Auto-generated method stub
-		return operationRepo.findByType("DEBIT");
+		return operationRepo.findByTypeOp("DEBIT");
 	}
 
 	@Override
 	public List<Operation> getCreditOperations() {
 		// TODO Auto-generated method stub
-		return operationRepo.findByType("CREDIT");
+		return operationRepo.findByTypeOp("CREDIT");
 	}
 
 }
