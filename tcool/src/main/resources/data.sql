@@ -31,7 +31,6 @@ INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, 
 ('Mehdi', now(), now(), 'Intervention 4', 'CLOTUREE', 'Intervention 4',0,'20 Rue Ghana, Rabat, Morocco'),
 ('Mehdi', now(), now(), 'Intervention 5', 'ANNULEE', 'Intervention 5',0,'Avenue Sidi Moussa, Salé, Morocco');
 
-<<<<<<< HEAD
 INSERT INTO `Evenement` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`) VALUES
 ('Mehdi', now(), now(), 'Evenement 1', 'EN COURS', 'Evenement 1', 'Public', 0),
 ('Mehdi', now(), now(), 'Evenement 2', 'EN COURS', 'Evenement 2', 'Public', 0),
@@ -42,7 +41,6 @@ INSERT INTO `Evenement` (`created_by`, `created_date`, `last_modified_date`, `de
 ('Mehdi', now(), now(), 'Evenement 7', 'REJETEE', 'Evenement 7', 'Public', 0),
 ('Mehdi', now(), now(), 'Evenement 8', 'REJETEE', 'Evenement 8', 'Public', 0),
 ('Mehdi', now(), now(), 'Evenement 9', 'REJETEE', 'Evenement 9', 'Public', 0);
-=======
 INSERT INTO `Copropriete` (`created_by`, `created_date`, `last_modified_date`, `name`,`details`, `city`,`version`,`nb_residents`, `syndic_id_compte`) VALUES
 ('Robb', now(), now(), 'Copropriete 1', 'EN COURS', 'Casa',0,14, '1'),
 ('Robb', now(), now(), 'Copropriete 2', 'EN COURS', 'Marrakech',0,14, '1'),
@@ -69,4 +67,3 @@ INSERT INTO `Operation` (`created_by`, `created_date`, `last_modified_date`, `ti
 ('Robb', now(), now(), 'Opération 12', 'DEBIT', 200, 0),
 ('Robb', now(), now(), 'Opération 13', 'DEBIT', 200, 0),
 ('Robb', now(), now(), 'Opération 14', 'CREDIT', 200, 0);
->>>>>>> refs/remotes/origin/master
