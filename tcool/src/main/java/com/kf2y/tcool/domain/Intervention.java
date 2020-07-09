@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 
@@ -27,6 +28,8 @@ public class Intervention extends AbstractAuditingEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idIntervention;
 
+	private String theme;
+	
 	private String title;
 
 	private String details;
@@ -35,6 +38,7 @@ public class Intervention extends AbstractAuditingEntity {
 	
 	private byte[] audio;
 
+	@Lob
 	private byte[] images;
 
 	private String location;
