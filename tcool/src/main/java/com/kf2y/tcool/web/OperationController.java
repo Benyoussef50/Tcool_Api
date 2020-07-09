@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kf2y.tcool.domain.Operation;
 import com.kf2y.tcool.exception.ResourceNotFoundException;
+import com.kf2y.tcool.model.Amount;
 import com.kf2y.tcool.service.OperationServiceImpl;
 
 @RestController
@@ -73,5 +74,11 @@ public class OperationController {
 	@GetMapping("/debits-operations")
 	public List<Operation> getAllDebitsOp(){
 		return operationService.getDebitOperations();
+	}
+	
+	/*********************** get total amount of each operation ***********************/
+	@GetMapping("/get-amounts")
+	public Amount getAmounts() {
+		return operationService.getAmountsOperations();
 	}
 }
