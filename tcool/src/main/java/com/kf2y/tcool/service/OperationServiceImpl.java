@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kf2y.tcool.domain.Operation;
+import com.kf2y.tcool.model.Amount;
 import com.kf2y.tcool.repository.OperationRepository;
 
 @Service
@@ -51,6 +52,22 @@ public class OperationServiceImpl implements OperationService {
 	public List<Operation> getCreditOperations() {
 		// TODO Auto-generated method stub
 		return operationRepo.findByTypeOp("CREDIT");
+	}
+
+	@Override
+	public Amount getAmountsOperations() {
+		Amount a = new Amount();
+		double somCredits = 0;
+		double somDebits = 0;
+		for(Operation op : getDebitOperations()) {
+			somDebits += op.getAmount();
+		}
+		for(Operation op : getCreditOperations()) {
+			somCredits += op.getAmount();
+		}
+		a.setDebitAmount(somDebits);
+		a.setCreditAmount(somCredits);
+		return a;
 	}
 
 }
