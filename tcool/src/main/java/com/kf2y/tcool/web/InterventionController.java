@@ -1,9 +1,15 @@
 package com.kf2y.tcool.web;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,11 +17,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.kf2y.tcool.domain.Intervention;
 import com.kf2y.tcool.domain.Message;
 import com.kf2y.tcool.service.InterventionServiceImpl;
+import com.kf2y.tcool.service.file.FilesStorageService;
 
 @RestController
 @RequestMapping("api/interventions")
@@ -23,6 +33,9 @@ public class InterventionController {
 
 	@Autowired
 	private InterventionServiceImpl impl;
+	
+	@Autowired
+	FilesStorageService storageService;
 
 	@PostMapping("/save-intervention")
 	public Intervention saveInter(@RequestBody Intervention intervention) {
@@ -76,5 +89,28 @@ public class InterventionController {
 	@Transactional
 	public Intervention addMessage(@PathVariable Long id, @RequestBody Message msg) {
 		return impl.addMessages(id, msg);
+	}
+	
+	/***************************** upload file ******************************/
+	// upload audio
+	@PostMapping("/upload-audio")
+	public ResponseEntity<String> uploadAudio(@RequestParam("file") MultipartFile file){
+		String message = "";
+		try {
+			storageService.saveAudio(file);
+			message = "Upload the audio successfully: " + file.getOriginalFilename();
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the audio: " + file.getOriginalFilename() + "!\n" + e;
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+	
+	// load the audio file
+	@GetMapping("/audio/{filename:.+}")
+	@ResponseBody
+	public ResponseEntity<Resource> getAudio(@PathVariable String filename) throws IOException {
+		Resource file = storageService.loadAudio(filename);
+		return ResponseEntity.ok().contentType(MediaType.APPLICATION_OCTET_STREAM).body(file);
 	}
 }
