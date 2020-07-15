@@ -36,6 +36,7 @@ public class Intervention extends AbstractAuditingEntity {
 
 	private String status;
 	
+	@Lob
 	private byte[] audio;
 
 	@Lob
