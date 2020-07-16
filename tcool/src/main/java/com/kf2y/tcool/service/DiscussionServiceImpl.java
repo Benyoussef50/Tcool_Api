@@ -2,17 +2,20 @@ package com.kf2y.tcool.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kf2y.tcool.domain.Discussion;
+
 import com.kf2y.tcool.repository.DiscussionRepository;
+
 
 @Service
 @Transactional
 public class DiscussionServiceImpl implements DiscussionService {
-	
+
 	@Autowired
 	private DiscussionRepository discussRepo;
 
@@ -21,7 +24,6 @@ public class DiscussionServiceImpl implements DiscussionService {
 		// TODO Auto-generated method stub
 		return discussRepo.save(discussion);
 	}
-	
 
 	@Override
 	public void delete(Long id) {
@@ -56,9 +58,12 @@ public class DiscussionServiceImpl implements DiscussionService {
 	@Override
 	public Discussion getById(Long id) {
 		Discussion d = discussRepo.findById(id).orElse(null);
-		if(d == null) {
-			throw new RuntimeException("Discussion avec id= "+id+" introuvable!");
-		} else return d;
+		if (d == null) {
+			throw new RuntimeException("Discussion avec id= " + id + " introuvable!");
+		} else
+			return d;
 	}
+
+	
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kf2y.tcool.domain.Discussion;
 
+
 public interface DiscussionService {
 
 	public Discussion save( Discussion discussion);
@@ -23,5 +24,5 @@ public interface DiscussionService {
 	// liste des discussions rejetées
 	public List<Discussion> getDiscussionRejetees();
 
-	
+
 }
