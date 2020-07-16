@@ -3,6 +3,7 @@ package com.kf2y.tcool.service;
 import java.util.List;
 
 import com.kf2y.tcool.domain.Discussion;
+import com.kf2y.tcool.domain.Message;
 
 
 public interface DiscussionService {
@@ -23,6 +24,8 @@ public interface DiscussionService {
 	
 	// liste des discussions rejetées
 	public List<Discussion> getDiscussionRejetees();
+	
+	public Discussion addMessages(Long id, Message msg);
 
 
 }
