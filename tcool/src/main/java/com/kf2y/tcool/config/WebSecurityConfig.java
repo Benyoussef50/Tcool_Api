@@ -66,7 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 			.authorizeRequests()
 			.antMatchers("/h2-console/**/**").permitAll()
-			.antMatchers("/api/auth/**").permitAll().anyRequest().authenticated();
+			.antMatchers("/api/auth/**", "/api/interventions/audio/**").permitAll().anyRequest().authenticated();
 		
 		http.addFilterBefore(jwtAuthFiler, UsernamePasswordAuthenticationFilter.class);
 		
@@ -79,7 +79,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		web.ignoring()
 			// allow anonymous resource requests
 			.and().ignoring()
-			.antMatchers(HttpMethod.GET, "/", "/resources/**", "/static/**", "/public/**", "/favicon.ico",
+			.antMatchers(HttpMethod.GET, "/", "/api/interventions/audio/*", "/resources/**", "/static/**", "/public/**", "/favicon.ico",
 					"/**/*.css", "/**/*.js", "/**/*.jpg")
 			.and().ignoring().antMatchers("/h2-console/**/**");
 	}

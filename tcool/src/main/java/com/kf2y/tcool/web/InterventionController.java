@@ -3,10 +3,12 @@ package com.kf2y.tcool.web;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -109,8 +111,25 @@ public class InterventionController {
 	// load the audio file
 	@GetMapping("/audio/{filename:.+}")
 	@ResponseBody
-	public ResponseEntity<Resource> getAudio(@PathVariable String filename) throws IOException {
+	public ResponseEntity<Resource> getAudio(@PathVariable String filename,
+			HttpServletRequest req) throws IOException {
 		Resource file = storageService.loadAudio(filename);
-		return ResponseEntity.ok().contentType(MediaType.APPLICATION_OCTET_STREAM).body(file);
+		
+		// try to determine file's content type
+		String contentType = null;
+		try {
+			contentType = req.getServletContext().getMimeType(file.getFile().getAbsolutePath());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		// fallback to the default content type if type could not be determined
+		if(contentType == null) {
+			contentType = "application/octect-stream";
+		}
+		return ResponseEntity.ok()
+				.contentType(MediaType.parseMediaType(contentType))
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
+				.body(file);
 	}
 }
