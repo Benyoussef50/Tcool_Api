@@ -2861,6 +2861,7 @@ INSERT INTO `Evenement` (`created_by`, `created_date`, `last_modified_date`, `de
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 2020-07-13 11:23:04 jdbc[45]: null
 org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
 The connection was not closed by the application and is garbage collected [90018-200]
@@ -3191,3 +3192,13 @@ The connection was not closed by the application and is garbage collected [90018
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 18 more
+=======
+2020-07-15 11:59:57 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "AUDIO VARBINARY(255)": "X'5249464624fd050057415645666d742010000000010001002256000044ac0000010010006461746100fd050000000000000000000000000000000000000000... (392492)"
+Value too long for column "AUDIO VARBINARY(255)": "X'5249464624fd050057415645666d742010000000010001002256000044ac0000010010006461746100fd050000000000000000000000000000000000000000... (392492)"; SQL statement:
+insert into intervention (id_intervention, created_by, created_date, last_modified_by, last_modified_date, version, audio, details, images, location, status, theme, title) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-07-15 12:05:19 jdbc[45]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "AUDIO VARBINARY(255)": "X'5249464624de040057415645666d742010000000010001002256000044ac0000010010006461746100de040000000000000000000000000000000000000000... (319020)"
+Value too long for column "AUDIO VARBINARY(255)": "X'5249464624de040057415645666d742010000000010001002256000044ac0000010010006461746100de040000000000000000000000000000000000000000... (319020)"; SQL statement:
+insert into intervention (id_intervention, created_by, created_date, last_modified_by, last_modified_date, version, audio, details, images, location, status, theme, title) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+>>>>>>> refs/remotes/origin/master
