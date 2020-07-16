@@ -1,13 +1,17 @@
 package com.kf2y.tcool.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kf2y.tcool.domain.Discussion;
+import com.kf2y.tcool.domain.Intervention;
+import com.kf2y.tcool.domain.Message;
 import com.kf2y.tcool.repository.DiscussionRepository;
+import com.kf2y.tcool.service.exception.ElementNotFoundException;
 
 @Service
 @Transactional
@@ -59,6 +63,20 @@ public class DiscussionServiceImpl implements DiscussionService {
 		if(d == null) {
 			throw new RuntimeException("Discussion avec id= "+id+" introuvable!");
 		} else return d;
+	}
+
+
+	@Override
+	public Discussion addMessages(Long id, Message msg) {
+		Optional<Discussion> discuss = discussRepo.findById(id);
+		if (discuss.isPresent()) {
+			Discussion d = discuss.get();
+			d.getMsgDiscussions().add(msg);
+			return discussRepo.save(d);
+		} else {
+			throw new ElementNotFoundException(Intervention.class, id);
+		}
+		
 	}
 
 }

@@ -36,8 +36,7 @@ public class Intervention extends AbstractAuditingEntity {
 
 	private String status;
 	
-	@Lob
-	private byte[] audio;
+	private String audio;
 
 	@Lob
 	private byte[] images;
@@ -53,7 +52,7 @@ public class Intervention extends AbstractAuditingEntity {
 	@Override
 	public String toString() {
 		return "Intervention [idIntervention=" + idIntervention + ", title=" + title + ", details=" + details
-				+ ", status=" + status + ", audio=" + Arrays.toString(audio) + ", images=" + Arrays.toString(images)
+				+ ", status=" + status + ", audio=" + audio + ", images=" + Arrays.toString(images)
 				+ ", location=" + location + ", msgInterventions=" + msgInterventions + "]";
 	}
 }

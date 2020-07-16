@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kf2y.tcool.domain.Discussion;
+import com.kf2y.tcool.domain.Message;
 import com.kf2y.tcool.exception.ResourceNotFoundException;
 import com.kf2y.tcool.service.DiscussionServiceImpl;
 
@@ -80,5 +81,12 @@ public class DiscussionController {
 	@GetMapping("/rejected")
 	public List<Discussion> getAllRejected(){
 		return discussService.getDiscussionRejetees();
+	}
+	
+	/********************* add Message to  discussion **************************/
+	@PutMapping("/add-message/{id}")
+	@Transactional
+	public Discussion addMessage(@PathVariable Long id, @RequestBody Message msg) {
+		return discussService.addMessages(id, msg);
 	}
 }
