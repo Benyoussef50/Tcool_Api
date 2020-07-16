@@ -5,6 +5,7 @@ import java.util.List;
 import com.kf2y.tcool.domain.Discussion;
 import com.kf2y.tcool.domain.Message;
 
+
 public interface DiscussionService {
 
 	public Discussion save( Discussion discussion);
@@ -26,5 +27,5 @@ public interface DiscussionService {
 	
 	public Discussion addMessages(Long id, Message msg);
 
-	
+
 }

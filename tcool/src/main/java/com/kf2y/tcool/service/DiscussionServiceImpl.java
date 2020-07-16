@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kf2y.tcool.domain.Discussion;
-import com.kf2y.tcool.domain.Intervention;
 import com.kf2y.tcool.domain.Message;
 import com.kf2y.tcool.repository.DiscussionRepository;
 import com.kf2y.tcool.service.exception.ElementNotFoundException;
@@ -16,7 +15,7 @@ import com.kf2y.tcool.service.exception.ElementNotFoundException;
 @Service
 @Transactional
 public class DiscussionServiceImpl implements DiscussionService {
-	
+
 	@Autowired
 	private DiscussionRepository discussRepo;
 
@@ -25,7 +24,6 @@ public class DiscussionServiceImpl implements DiscussionService {
 		// TODO Auto-generated method stub
 		return discussRepo.save(discussion);
 	}
-	
 
 	@Override
 	public void delete(Long id) {
@@ -60,23 +58,22 @@ public class DiscussionServiceImpl implements DiscussionService {
 	@Override
 	public Discussion getById(Long id) {
 		Discussion d = discussRepo.findById(id).orElse(null);
-		if(d == null) {
-			throw new RuntimeException("Discussion avec id= "+id+" introuvable!");
-		} else return d;
+		if (d == null) {
+			throw new RuntimeException("Discussion avec id= " + id + " introuvable!");
+		} else
+			return d;
 	}
-
 
 	@Override
 	public Discussion addMessages(Long id, Message msg) {
-		Optional<Discussion> discuss = discussRepo.findById(id);
-		if (discuss.isPresent()) {
-			Discussion d = discuss.get();
-			d.getMsgDiscussions().add(msg);
-			return discussRepo.save(d);
+		Optional<Discussion> discussion = discussRepo.findById(id);
+		if (discussion.isPresent()) {
+			Discussion discuss = discussion.get();
+			discuss.getMsgDiscussions().add(msg);
+			return discussRepo.save(discuss);
 		} else {
-			throw new ElementNotFoundException(Intervention.class, id);
+			throw new ElementNotFoundException(Discussion.class, id);
 		}
-		
 	}
 
 }
