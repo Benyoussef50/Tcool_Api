@@ -67,14 +67,11 @@ public class CompteController {
 		return compteService.getAllCompte();
 	}
 	
-<<<<<<< HEAD
-	
-	
-=======
+
 	// get all intervenants
 	@GetMapping("/intervenants")
 	public List<Compte> getAllIntervenants() {
 		return compteService.getAllIntervenants();
 	}
->>>>>>> refs/remotes/origin/master
+
 }
