@@ -80,6 +80,21 @@ public class InterventionController {
 	public Intervention annulerStatus(@PathVariable Long id) {
 		return impl.update("ANNULEE", id);
 	}
+	
+	@PutMapping("/valider-status/{id}")
+	@Transactional
+	public Intervention validerStatus(@PathVariable Long id) {
+		return impl.update("AFFECTER", id);
+	}
+	
+	
+	@PutMapping("/affecter-status/{id}")
+	@Transactional
+	public Intervention affecterStatus(@PathVariable Long id, @RequestBody Intervention inter) {
+		inter.setStatus("EN COURS");
+		return impl.save(inter);
+	}
+
 
 	@PutMapping("/cloturer-status/{id}")
 	@Transactional
@@ -91,7 +106,7 @@ public class InterventionController {
 	@Transactional
 	public Intervention addMessage(@PathVariable Long id, @RequestBody Message msg) {
 		return impl.addMessages(id, msg);
-	}
+	} 
 	
 	/***************************** upload file ******************************/
 	// upload audio

@@ -10,4 +10,5 @@ public interface CompteService {
 	public void delete(Long id);
 	public Compte getById(Long id);
 	public List<Compte> getAllCompte();
+	public List<Compte> getAllIntervenants();
 }
