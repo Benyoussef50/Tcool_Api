@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kf2y.tcool.domain.Discussion;
+import com.kf2y.tcool.domain.Intervention;
 import com.kf2y.tcool.domain.Message;
 import com.kf2y.tcool.repository.DiscussionRepository;
 import com.kf2y.tcool.service.exception.ElementNotFoundException;
@@ -74,6 +75,19 @@ public class DiscussionServiceImpl implements DiscussionService {
 		} else {
 			throw new ElementNotFoundException(Discussion.class, id);
 		}
+	}
+
+	@Override
+	public Discussion update(String status, Long id) {
+		Optional<Discussion> discuss = discussRepo.findById(id);
+		if (discuss.isPresent()) {
+			Discussion inter = discuss.get();
+			inter.setStatus(status);
+			return discussRepo.save(inter);
+		} else {
+			throw new ElementNotFoundException(Intervention.class, id);
+		}
+
 	}
 
 }

@@ -89,4 +89,16 @@ public class DiscussionController {
 	public Discussion addMessage(@PathVariable Long id, @RequestBody Message msg) {
 		return discussService.addMessages(id, msg);
 	}
+	
+	@PutMapping("/rejeter-status/{id}")
+	@Transactional
+	public Discussion annulerStatus(@PathVariable Long id) {
+		return discussService.update("REJETEE", id);
+	}
+	
+	@PutMapping("/cloturer-status/{id}")
+	@Transactional
+	public Discussion cloturerStatus(@PathVariable Long id) {
+		return discussService.update("CLOTUREE", id);
+	}
 }
