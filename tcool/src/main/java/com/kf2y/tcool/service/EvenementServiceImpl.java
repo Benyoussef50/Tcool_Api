@@ -32,7 +32,7 @@ public class EvenementServiceImpl implements EvenementService {
 			event.setStatus(status);
 			return evenementRepository.save(event);
 		} else {
-			throw new ElementNotFoundException(Intervention.class, id);
+			throw new ElementNotFoundException(Evenement.class, id);
 		}
 	}
 
