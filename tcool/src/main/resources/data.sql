@@ -5,12 +5,16 @@ INSERT INTO `APP_Role` (`id`, `role`) VALUES
 
 INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `password`, `phone`, `created_date`,`last_modified_date`,`version` ) VALUES
 ('KF2Y','mehdi','benyoussef','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',now(),now(),0),
-('KF2Y','ROBBILE','KONDE-MANE','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
+('KF2Y','kondi-mane','robbile','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
+('KF2Y','test1','test2','test1@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0604370707',now(),now(),0),
+('KF2Y','test2','test2','test2@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
 ;
 
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 (1, 1),
-(2, 1)
+(2, 1),
+(3, 3),
+(4, 3)
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`) VALUES
@@ -26,8 +30,8 @@ INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `d
 
 INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`,`version`,`location`,`theme`) VALUES
 ('Mehdi', now(), now(), 'Intervention 1', 'EN COURS', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','Peinture, Sols et murs'),
-('Mehdi', now(), now(), 'Intervention 2', 'EN COURS', 'Intervention 2',0,'22 Avenue Michlifen, Rabat 10080, Morocco','Peinture, Sols et murs'),
-('Mehdi', now(), now(), 'Intervention 3', 'EN COURS', 'Intervention 3',0,'n10 Rue el Baoudi, Rabat 10000, Morocco','Peinture, Sols et murs'),
+('Mehdi', now(), now(), 'Intervention 2', 'VALIDER', 'Intervention 2',0,'22 Avenue Michlifen, Rabat 10080, Morocco','Peinture, Sols et murs'),
+('Mehdi', now(), now(), 'Intervention 3', 'AFFECTER', 'Intervention 3',0,'n10 Rue el Baoudi, Rabat 10000, Morocco','Peinture, Sols et murs'),
 ('Mehdi', now(), now(), 'Intervention 4', 'CLOTUREE', 'Intervention 4',0,'20 Rue Ghana, Rabat, Morocco','Peinture, Sols et murs'),
 ('Mehdi', now(), now(), 'Intervention 5', 'ANNULEE', 'Intervention 5',0,'Avenue Sidi Moussa, Salé, Morocco','Peinture, Sols et murs');
 

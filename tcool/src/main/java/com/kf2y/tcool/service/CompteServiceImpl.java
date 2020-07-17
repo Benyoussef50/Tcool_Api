@@ -40,4 +40,10 @@ public class CompteServiceImpl implements CompteService {
 		return compteRepo.findAll();
 	}
 
+	@Override
+	public List<Compte> getAllIntervenants() {
+		// TODO Auto-generated method stub
+		return compteRepo.findAllIdInter();
+	}
+
 }

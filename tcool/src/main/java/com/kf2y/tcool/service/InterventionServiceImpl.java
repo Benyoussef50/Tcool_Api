@@ -1,5 +1,6 @@
 package com.kf2y.tcool.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,14 +35,17 @@ public class InterventionServiceImpl implements InterventionService {
 
 	@Override
 	public List<Intervention> findAllIntervention() {
-
 		return interventionRepository.findAll();
 	}
 
 	@Override
 	public List<Intervention> findInterEnCours() {
-
-		return interventionRepository.findByStatus("EN COURS");
+		List<Intervention> intervs = new ArrayList<Intervention>();
+		intervs.addAll(interventionRepository.findByStatus("EN COURS"));
+		intervs.addAll(interventionRepository.findByStatus("VALIDER"));
+		intervs.addAll(interventionRepository.findByStatus("AFFECTER"));
+		intervs.addAll(interventionRepository.findByStatus("EVALUER"));
+		return intervs;
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package com.kf2y.tcool.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,5 +65,11 @@ public class CompteController {
 	@GetMapping("/all")
 	public List<Compte> getAll(){
 		return compteService.getAllCompte();
+	}
+	
+	// get all intervenants
+	@GetMapping("/intervenants")
+	public List<Compte> getAllIntervenants() {
+		return compteService.getAllIntervenants();
 	}
 }
