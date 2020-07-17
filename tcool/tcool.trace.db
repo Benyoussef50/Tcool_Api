@@ -3313,3 +3313,15 @@ UPDATE "PUBLIC"."INTERVENTION" SET "ID_INTERVENTION"=? ,"CREATED_BY"=? ,"CREATED
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Unknown Source)
+2020-07-17 17:02:26 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "C" non trouvée
+Table "C" not found; SQL statement:
+SELECT c.* from `COMPTE`  
+			   INNER JOIN `COMPTE_MY_ROLE` 
+			   	ON c.id = cr.COMPTE_ID_COMPTE where cr.COMPTE_ID_COMPTE =3 [42102-200]
+2020-07-17 17:03:04 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "C" non trouvée
+Table "C" not found; SQL statement:
+SELECT c.* from `COMPTE`  
+			   INNER JOIN `COMPTE_MY_ROLE` 
+			   	ON c.ID_COMPTE = cr.COMPTE_ID_COMPTE where cr.COMPTE_ID_COMPTE =3 [42102-200]

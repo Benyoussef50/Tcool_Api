@@ -65,4 +65,7 @@ public class CompteController {
 	public List<Compte> getAll(){
 		return compteService.getAllCompte();
 	}
+	
+	
+	
 }
