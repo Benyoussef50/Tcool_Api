@@ -58,7 +58,7 @@ public class InterventionController {
 	@GetMapping("/encours")
 	public List<Intervention> getAllEnCours() {
 		return impl.findInterEnCours();
-	}
+	} 
 
 	@GetMapping("/cloturees")
 	public List<Intervention> getAllCloturees() {

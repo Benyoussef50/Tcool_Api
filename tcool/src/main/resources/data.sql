@@ -12,12 +12,10 @@ INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `passwor
 ;
 
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
-(1, 1),
+(1, 4),
 (2, 1),
 (3, 3),
 (4, 3)
-(1, 4),
-(2, 1)
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`) VALUES
@@ -74,3 +72,11 @@ INSERT INTO `Operation` (`created_by`, `created_date`, `last_modified_date`, `ti
 ('Robb', now(), now(), 'Opération 12', 'DEBIT', 200, 0),
 ('Robb', now(), now(), 'Opération 13', 'DEBIT', 200, 0),
 ('Robb', now(), now(), 'Opération 14', 'CREDIT', 200, 0);
+
+INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, `message`,`is_read`,`version`) VALUES
+('Robb', now(), now(), 'Notification 1', false,0),
+('Robb', now(), now(), 'Notification 2', false,0),
+('Robb', now(), now(), 'Notification 3', false,0),
+('Robb', now(), now(), 'Notification 5', false,0);
+('Robb', now(), now(), 'Notification 4', false,0),
+

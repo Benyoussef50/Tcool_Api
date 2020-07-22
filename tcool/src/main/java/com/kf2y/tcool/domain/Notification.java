@@ -21,6 +21,8 @@ public class Notification extends AbstractAuditingEntity {
 	private Long idNotification;
 
 	private String message;
+	
+	private boolean isRead;
 
 	public Notification() {
 	}
