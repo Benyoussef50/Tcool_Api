@@ -1,6 +1,6 @@
 package com.kf2y.tcool.web;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kf2y.tcool.domain.Compte;
+import com.kf2y.tcool.domain.Notification;
 import com.kf2y.tcool.exception.ResourceNotFoundException;
 import com.kf2y.tcool.service.CompteServiceImpl;
 
@@ -73,5 +74,26 @@ public class CompteController {
 	public List<Compte> getAllIntervenants() {
 		return compteService.getAllIntervenants();
 	}
-
+	// Notifier tous les syndics
+	@PostMapping("/notif-syndic")
+	public List<Compte> addNotifSyndic(@RequestBody Notification notification){
+		return compteService.addNotifsToSyndic(notification);
+	}
+	
+	// Notifier tous les intervenants
+	@PostMapping("/notif-intervenant")
+	public List<Compte> addNotifInter(@RequestBody Notification notification){
+		return compteService.addNotifsToInter(notification);
+	}
+	
+	// Notifier un Acteur par son Id
+	@PostMapping("/notif-acteur/{id}")
+	public Compte addNotifActeur(@RequestBody Notification notification,@PathVariable Long id){
+		return compteService.notifierActeur(notification, id);
+	}
+	// Notifier tous les residents
+	@PostMapping("/notif-resident")
+	public List<Compte> addNotif(@RequestBody Notification notification){
+		return compteService.addNotifsToResid(notification);
+	}
 }

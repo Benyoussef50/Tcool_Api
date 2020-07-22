@@ -8,14 +8,16 @@ INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `passwor
 ('KF2Y','mehdi','benyoussef','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',now(),now(),0),
 ('KF2Y','kondi-mane','robbile','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
 ('KF2Y','test1','test2','test1@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0604370707',now(),now(),0),
-('KF2Y','test2','test2','test2@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
+('KF2Y','test2','test2','test2@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
+('KF2Y','said','bendrioue','said@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
 ;
 
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 (1, 4),
 (2, 1),
 (3, 3),
-(4, 3)
+(4, 3),
+(5, 2)
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`) VALUES

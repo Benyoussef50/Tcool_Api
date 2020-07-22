@@ -2,6 +2,7 @@ package com.kf2y.tcool.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -55,7 +56,7 @@ public class Compte extends AbstractAuditingEntity {
 	private List<Operation> myOperations;
 	
 	// mes notifications
-	@OneToMany()
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Notification> myNotifications;
 	
 	@OneToMany()
