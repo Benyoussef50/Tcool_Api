@@ -22,5 +22,15 @@ public interface CompteRepository extends JpaRepository<Compte, Long> {
 			, nativeQuery = true)
 	public List<Compte> findAllIdInter();
 
-
+	@Query(value="SELECT c.* from `COMPTE` c INNER JOIN `COMPTE_MY_ROLE` cr"
+			+ " ON c.ID_COMPTE = cr.COMPTE_ID_COMPTE "
+			+ "where cr.MY_ROLE_ID =2"
+			, nativeQuery = true)
+	public List<Compte> findAllSynd();
+	
+	@Query(value="SELECT c.* from `COMPTE` c INNER JOIN `COMPTE_MY_ROLE` cr"
+			+ " ON c.ID_COMPTE = cr.COMPTE_ID_COMPTE "
+			+ "where cr.MY_ROLE_ID =1"
+			, nativeQuery = true)
+	public List<Compte> findAllResid();
 }
