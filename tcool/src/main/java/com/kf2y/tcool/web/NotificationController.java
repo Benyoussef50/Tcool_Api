@@ -41,6 +41,6 @@ public class NotificationController {
 	
 	@GetMapping("/unread-notifications")
 	public List<Notification> getAllUnreadNotif(){
-		return notifService.getAllUnreadNotifs();
+		return notifService.getAllUnreadNotifs();	
 	}
 }

@@ -77,6 +77,6 @@ INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, 
 ('Robb', now(), now(), 'Notification 1', false,0),
 ('Robb', now(), now(), 'Notification 2', false,0),
 ('Robb', now(), now(), 'Notification 3', false,0),
-('Robb', now(), now(), 'Notification 5', false,0);
 ('Robb', now(), now(), 'Notification 4', false,0),
+('Robb', now(), now(), 'Notification 5', false,0);
 
