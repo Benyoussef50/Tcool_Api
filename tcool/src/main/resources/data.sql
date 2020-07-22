@@ -12,12 +12,10 @@ INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `passwor
 ;
 
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
-(1, 1),
+(1, 4),
 (2, 1),
 (3, 3),
 (4, 3)
-(1, 4),
-(2, 1)
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`) VALUES
