@@ -72,3 +72,11 @@ INSERT INTO `Operation` (`created_by`, `created_date`, `last_modified_date`, `ti
 ('Robb', now(), now(), 'Opération 12', 'DEBIT', 200, 0),
 ('Robb', now(), now(), 'Opération 13', 'DEBIT', 200, 0),
 ('Robb', now(), now(), 'Opération 14', 'CREDIT', 200, 0);
+
+INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, `message`,`is_read`,`version`) VALUES
+('Robb', now(), now(), 'Notification 1', false,0),
+('Robb', now(), now(), 'Notification 2', false,0),
+('Robb', now(), now(), 'Notification 3', false,0),
+('Robb', now(), now(), 'Notification 5', false,0);
+('Robb', now(), now(), 'Notification 4', false,0),
+

@@ -9,9 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
-
 
 import lombok.Getter;
 import lombok.Setter;
@@ -37,6 +36,9 @@ public class Intervention extends AbstractAuditingEntity {
 	private String status;
 	
 	private String audio;
+	
+	@ManyToOne()
+	private Compte intervenant;
 
 	@Lob
 	private byte[] images;
@@ -49,10 +51,11 @@ public class Intervention extends AbstractAuditingEntity {
 	private List<Message> msgInterventions;
 	public Intervention() {
 	}
+	
 	@Override
 	public String toString() {
 		return "Intervention [idIntervention=" + idIntervention + ", title=" + title + ", details=" + details
-				+ ", status=" + status + ", audio=" + audio + ", images=" + Arrays.toString(images)
+				+ ", status=" + status + ", audio=" + audio + ", intervenant=" + intervenant.toString()+ ", images=" + Arrays.toString(images)
 				+ ", location=" + location + ", msgInterventions=" + msgInterventions + "]";
 	}
 }

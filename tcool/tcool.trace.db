@@ -3434,6 +3434,7 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQ
 Syntax error in SQL statement "INSERT INTO `COMPTE` (`CREATED_BY`, `FIRST_NAME`, `LAST_NAME`, `EMAIL`, `PASSWORD`, `PHONE`, `CREATED_DATE`,`LAST_MODIFIED_DATE`,`VERSION` ) VALUES ('KF2Y','mehdi','benyoussef','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',NOW(),NOW(),0), ('KF2Y','kondi-mane','robbile','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',NOW(),NOW(),0) ([*]'KF2Y','test1','test2','test1@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0604370707',NOW(),NOW(),0) ('KF2Y','test2','test2','test2@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',NOW(),NOW(),0) "; SQL statement:
 INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `password`, `phone`, `created_date`,`last_modified_date`,`version` ) VALUES ('KF2Y','mehdi','benyoussef','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',now(),now(),0), ('KF2Y','kondi-mane','robbile','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0) ('KF2Y','test1','test2','test1@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0604370707',now(),now(),0) ('KF2Y','test2','test2','test2@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)  [42000-200]
 >>>>>>> refs/remotes/origin/master
+<<<<<<< HEAD
 2020-07-17 18:28:56 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "INSERT INTO `COMPTE_MY_ROLE` (`COMPTE_ID_COMPTE`, `MY_ROLE_ID`) VALUES (1, 1), (2, 1), (3, 3), (4, 3) ([*]1, 4), (2, 1) "
 Syntax error in SQL statement "INSERT INTO `COMPTE_MY_ROLE` (`COMPTE_ID_COMPTE`, `MY_ROLE_ID`) VALUES (1, 1), (2, 1), (3, 3), (4, 3) ([*]1, 4), (2, 1) "; SQL statement:
@@ -3922,3 +3923,9 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/mac/g
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "INSERT INTO `COMPTE_MY_ROLE` (`COMPTE_ID_COMPTE`, `MY_ROLE_ID`) VALUES (1, 4) ([*]2, 1), (3, 3), (4, 3), "
 Syntax error in SQL statement "INSERT INTO `COMPTE_MY_ROLE` (`COMPTE_ID_COMPTE`, `MY_ROLE_ID`) VALUES (1, 4) ([*]2, 1), (3, 3), (4, 3), "; SQL statement:
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES (1, 4) (2, 1), (3, 3), (4, 3),  [42000-200]
+=======
+2020-07-22 11:51:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "('Robb'[*], NOW(), NOW(), 'Notification 4', FALSE,0), "; attendu "(, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "('Robb'[*], NOW(), NOW(), 'Notification 4', FALSE,0), "; expected "(, WITH, SELECT, TABLE, VALUES"; SQL statement:
+('Robb', now(), now(), 'Notification 4', false,0),  [42001-200]
+>>>>>>> refs/remotes/origin/master
