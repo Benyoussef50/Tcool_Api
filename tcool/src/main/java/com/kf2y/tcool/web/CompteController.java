@@ -32,6 +32,11 @@ public class CompteController {
 		return compteService.getById(id);
 	}
 	
+	@GetMapping("notif-no-read/{id}")
+	public List<Notification> getNoReadNotifs(@PathVariable Long id){
+		return compteService.getNoReadNotif(id);
+	}
+	
 	// save an account
 	@PostMapping("/save-account")
 	public Compte saveCompte(@RequestBody Compte compte) {

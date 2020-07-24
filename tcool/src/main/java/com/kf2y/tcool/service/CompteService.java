@@ -16,4 +16,5 @@ public interface CompteService {
 	public List<Compte> addNotifsToInter(Notification n);
 	public List<Compte> addNotifsToResid(Notification n);
 	public Compte notifierActeur(Notification n,Long id);
+	public List<Notification> getNoReadNotif(Long id);
 }

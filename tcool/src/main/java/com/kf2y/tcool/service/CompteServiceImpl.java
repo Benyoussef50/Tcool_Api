@@ -12,6 +12,7 @@ import com.kf2y.tcool.repository.CompteRepository;
 import com.kf2y.tcool.service.exception.ElementNotFoundException;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -85,6 +86,21 @@ public class CompteServiceImpl implements CompteService {
 			cpt.getMyNotifications().add(n);
 			return compteRepo.save(cpt);
 		} else {
+			throw new ElementNotFoundException(Compte.class, id);
+		}
+	}
+
+	@Override
+	public List<Notification> getNoReadNotif(Long id) {
+		Optional<Compte> compte = compteRepo.findById(id);
+		if (compte.isPresent()) {
+			Compte cpt =compte.get();
+			List<Notification> notifs = cpt.getMyNotifications();
+			List<Notification> result = notifs.stream()
+					.filter(n -> !n.isRead())  
+	                .collect(Collectors.toList()); 
+		return result;
+		}else {
 			throw new ElementNotFoundException(Compte.class, id);
 		}
 	}
