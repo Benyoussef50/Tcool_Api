@@ -95,6 +95,12 @@ public class InterventionController {
 		return impl.save(inter);
 	}
 
+	@PutMapping("/evaluer-status/{id}")
+	@Transactional
+	public Intervention evaluerStatus(@PathVariable Long id, @RequestBody Intervention inter) {
+		inter.setStatus("EVALUER");
+		return impl.save(inter);
+	}
 
 	@PutMapping("/cloturer-status/{id}")
 	@Transactional

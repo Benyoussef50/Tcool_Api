@@ -10,4 +10,5 @@ public interface NotificationService {
 	public Notification save(Notification notif);
 	public Notification update(Long id);
 	public List<Notification> getAllUnreadNotifs();
+	public Notification setReadtoYes(Long id);
 }
