@@ -105,4 +105,19 @@ public class CompteServiceImpl implements CompteService {
 		}
 	}
 
+	@Override
+	public List<Notification> getReadNotif(Long id) {
+		Optional<Compte> compte = compteRepo.findById(id);
+		if (compte.isPresent()) {
+			Compte cpt =compte.get();
+			List<Notification> notifs = cpt.getMyNotifications();
+			List<Notification> result = notifs.stream()
+					.filter(n -> n.isRead())  
+	                .collect(Collectors.toList()); 
+		return result;
+		}else {
+			throw new ElementNotFoundException(Compte.class, id);
+		}
+	}
+
 }

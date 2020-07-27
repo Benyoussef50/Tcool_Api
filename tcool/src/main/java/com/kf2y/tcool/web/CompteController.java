@@ -31,10 +31,16 @@ public class CompteController {
 	public Compte getCompte(@PathVariable Long id) {
 		return compteService.getById(id);
 	}
-	
-	@GetMapping("notif-no-read/{id}")
+	 // get unread notifications
+	@GetMapping("/notif-no-read/{id}")
 	public List<Notification> getNoReadNotifs(@PathVariable Long id){
 		return compteService.getNoReadNotif(id);
+	}
+	
+	// get already read notifications
+	@GetMapping("/notif-already-read/{id}")
+	public List<Notification> getReadNotifs(@PathVariable Long id){
+		return compteService.getReadNotif(id);
 	}
 	
 	// save an account
