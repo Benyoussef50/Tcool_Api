@@ -101,6 +101,13 @@ public class CompteController {
 	public Compte addNotifActeur(@RequestBody Notification notification,@PathVariable Long id){
 		return compteService.notifierActeur(notification, id);
 	}
+	
+	// Notifier un Acteur par son email
+	@PostMapping("/notif-acteur-by-email/{email}")
+	public Compte addNotifActeur(@RequestBody Notification notification,@PathVariable String email){
+		return compteService.notifierActeurByEmail(notification, email);
+	}
+	
 	// Notifier tous les residents
 	@PostMapping("/notif-resident")
 	public List<Compte> addNotif(@RequestBody Notification notification){

@@ -136,4 +136,21 @@ public class CompteServiceImpl implements CompteService {
 		}
 	}
 
+	@Override
+	public Compte getByEmail(String email) {
+		// TODO Auto-generated method stub
+		return compteRepo.findByEmail(email);
+	}
+
+	@Override
+	public Compte notifierActeurByEmail(Notification n, String email) {
+		Compte compte = compteRepo.findByEmail(email);
+		if (compte != null) {
+			compte.getMyNotifications().add(n);
+			return compteRepo.save(compte);
+		} else {
+			throw new RuntimeException("Could not find the user with email: " + email);
+		}
+	}
+
 }
