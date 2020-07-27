@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.kf2y.tcool.domain.Notification;
 import com.kf2y.tcool.repository.NotificationRepository;
 import com.kf2y.tcool.service.exception.ElementNotFoundException;
@@ -51,6 +50,19 @@ public class NotificationServiceImpl implements NotificationService {
 			throw new RuntimeException("Notification avec id= " + id + " introuvable!");
 		} else
 			return n;
+	}
+
+	@Transactional
+	@Override
+	public Notification setReadtoYes(Long id) {
+		Optional<Notification> notif = notifRepo.findById(id);
+		if(notif.isPresent()) {
+			Notification notification = notif.get();
+			notification.setRead(true);
+			return notifRepo.save(notification);
+		} else {
+			throw new ElementNotFoundException(Notification.class, id);
+		}
 	}
 
 }

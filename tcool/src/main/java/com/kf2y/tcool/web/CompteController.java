@@ -37,10 +37,9 @@ public class CompteController {
 		return compteService.getNoReadNotif(id);
 	}
 	
-	// get already read notifications
-	@GetMapping("/notif-already-read/{id}")
-	public List<Notification> getReadNotifs(@PathVariable Long id){
-		return compteService.getReadNotif(id);
+	@GetMapping("notif-no-read-cpt/{id}")
+	public Compte getNoReadNotifsR(@PathVariable Long id){
+		return compteService.getNoReadNotifcpt(id);
 	}
 	
 	// save an account

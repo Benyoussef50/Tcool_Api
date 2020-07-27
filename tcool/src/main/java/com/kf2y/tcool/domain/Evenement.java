@@ -35,6 +35,8 @@ public class Evenement extends AbstractAuditingEntity {
 	
 	private LocalTime duration;
 	
+	
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<EvenementDocs> documents;
 	

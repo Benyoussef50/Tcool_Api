@@ -34,6 +34,12 @@ public class NotificationController {
 		return notifService.update(id);
 	} 
 	
+	@PutMapping("/read/{id}")
+	@Transactional
+	public Notification readNotif(@PathVariable Long id) {
+		return notifService.setReadtoYes(id);
+	}
+	
 	@GetMapping("/{id}")
 	public Notification getNotificationById(@PathVariable Long id) {
 		return notifService.getById(id);

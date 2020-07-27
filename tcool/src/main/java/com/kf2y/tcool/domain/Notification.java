@@ -23,6 +23,8 @@ public class Notification extends AbstractAuditingEntity {
 	private String message;
 	
 	private boolean isRead;
+	
+	private String theme;
 
 	public Notification() {
 	}
