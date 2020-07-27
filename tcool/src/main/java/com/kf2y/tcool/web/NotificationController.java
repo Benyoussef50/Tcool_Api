@@ -32,7 +32,7 @@ public class NotificationController {
 	@Transactional
 	public Notification updateNotif(@PathVariable Long id) {
 		return notifService.update(id);
-	}
+	} 
 	
 	@PutMapping("/read/{id}")
 	@Transactional

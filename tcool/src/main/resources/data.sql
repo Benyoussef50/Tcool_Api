@@ -21,10 +21,10 @@ INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`) VALUES
-('Robb', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0),
-('Robb', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0),
-('Robb', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0),
-('Robb', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0),
+('2', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0),
+('2', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0),
+('2', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0),
+('2', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0),
 ('Robb', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0),
 ('Robb', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0),
 ('Robb', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0),
@@ -82,3 +82,5 @@ INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, 
 ('Robb', now(), now(), 'Notification 4', false,0),
 ('Robb', now(), now(), 'Notification 5', false,0);
 
+INSERT INTO `compte_my_notifications` VALUES
+(2,1),(2,2),(2,5);

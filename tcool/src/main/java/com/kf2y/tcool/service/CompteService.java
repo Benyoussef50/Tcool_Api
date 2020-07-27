@@ -10,12 +10,15 @@ public interface CompteService {
 	public Compte save(Compte c);
 	public void delete(Long id);
 	public Compte getById(Long id);
+	public Compte getByEmail(String email);
 	public List<Compte> getAllCompte();
 	public List<Compte> getAllIntervenants();
 	public List<Compte> addNotifsToSyndic(Notification n);
 	public List<Compte> addNotifsToInter(Notification n);
 	public List<Compte> addNotifsToResid(Notification n);
 	public Compte notifierActeur(Notification n,Long id);
+	public Compte notifierActeurByEmail(Notification n, String email);
 	public List<Notification> getNoReadNotif(Long id);
 	public Compte getNoReadNotifcpt(Long id);
+	public List<Notification> getReadNotif(Long id);
 }
