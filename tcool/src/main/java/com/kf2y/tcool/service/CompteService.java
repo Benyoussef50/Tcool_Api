@@ -18,4 +18,5 @@ public interface CompteService {
 	public Compte notifierActeur(Notification n,Long id);
 	public List<Notification> getNoReadNotif(Long id);
 	public Compte getNoReadNotifcpt(Long id);
+	public List<Notification> getReadNotif(Long id);
 }
