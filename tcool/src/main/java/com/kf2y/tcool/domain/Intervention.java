@@ -32,6 +32,8 @@ public class Intervention extends AbstractAuditingEntity {
 	private String title;
 
 	private String details;
+	
+	private String compteRendu;
 
 	private String status;
 	
