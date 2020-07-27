@@ -21,15 +21,15 @@ INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`) VALUES
-('2', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0),
-('2', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0),
-('2', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0),
-('2', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0),
-('Robb', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0),
-('Robb', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0),
-('Robb', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0),
-('Robb', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public', 0),
-('Robb', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0);
+('robb@gmail.com', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0),
+('robb@gmail.com', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0),
+('robb@gmail.com', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0),
+('robb@gmail.com', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0),
+('robb@gmail.com', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0),
+('robb@gmail.com', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0),
+('robb@gmail.comb', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0),
+('robb@gmail.com', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public', 0),
+('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0);
 
 INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`,`version`,`location`,`theme`) VALUES
 ('Mehdi', now(), now(), 'Intervention 1', 'VALIDER', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','Peinture, Sols et murs'),
@@ -75,12 +75,12 @@ INSERT INTO `Operation` (`created_by`, `created_date`, `last_modified_date`, `ti
 ('Robb', now(), now(), 'Opération 13', 'DEBIT', 200, 0),
 ('Robb', now(), now(), 'Opération 14', 'CREDIT', 200, 0);
 
-INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, `message`,`is_read`,`version`) VALUES
-('Robb', now(), now(), 'Notification 1', false,0),
-('Robb', now(), now(), 'Notification 2', false,0),
-('Robb', now(), now(), 'Notification 3', false,0),
-('Robb', now(), now(), 'Notification 4', false,0),
-('Robb', now(), now(), 'Notification 5', false,0);
+INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, `message`,`is_read`,`version`, `theme`) VALUES
+('mehdi@gmail.com', now(), now(), 'Notification 1', false,0,'DISCUSSION'),
+('mehdi@gmail.com', now(), now(), 'Notification 2', false,0, 'DISCUSSION'),
+('robb@gmail.com', now(), now(), 'Notification 3', false,0,'EVENEMENT'),
+('robb@gmail.com', now(), now(), 'Notification 4', false,0,'EVENEMENT'),
+('robb@gmail.com', now(), now(), 'Notification 5', false,0,'INTERVENTION');
 
 INSERT INTO `compte_my_notifications` VALUES
 (2,1),(2,2),(2,5);
