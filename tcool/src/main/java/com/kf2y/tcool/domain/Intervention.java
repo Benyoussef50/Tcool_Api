@@ -34,11 +34,13 @@ public class Intervention extends AbstractAuditingEntity {
 	private String details;
 	
 	private String compteRendu;
+	
+	private String evaluation;
 
 	private String status;
 	
 	private String audio;
-	
+	 
 	@ManyToOne()
 	private Compte intervenant;
 

@@ -18,6 +18,16 @@ public interface InterventionService {
 	 * Update status
 	 */
 	public Intervention update(String status, Long id);
+	
+	/**
+	 * create CR for intervention
+	 */
+	public Intervention createCRIntervention(String status, String cr, Long id);
+	
+	/**
+	 * create CR for intervention
+	 */
+	public Intervention evaluateIntervention(String status, String evaluation, Long id);
 
 	/**
 	 * Find by id

@@ -32,8 +32,8 @@ INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `d
 ('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0);
 
 INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`,`version`,`location`,`theme`) VALUES
-('mehdi@gmail.com', now(), now(), 'Intervention 1', 'VALIDER', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','Peinture, Sols et murs'),
-('mehdi@gmail.com', now(), now(), 'Intervention 2', 'VALIDER', 'Intervention 2',0,'22 Avenue Michlifen, Rabat 10080, Morocco','Peinture, Sols et murs'),
+('robb@gmail.com', now(), now(), 'Intervention 1', 'VALIDER', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','Peinture, Sols et murs'),
+('robb@gmail.com', now(), now(), 'Intervention 2', 'VALIDER', 'Intervention 2',0,'22 Avenue Michlifen, Rabat 10080, Morocco','Peinture, Sols et murs'),
 ('mehdi@gmail.com', now(), now(), 'Intervention 3', 'VALIDER', 'Intervention 3',0,'n10 Rue el Baoudi, Rabat 10000, Morocco','Peinture, Sols et murs'),
 ('mehdi@gmail.com', now(), now(), 'Intervention 4', 'CLOTUREE', 'Intervention 4',0,'20 Rue Ghana, Rabat, Morocco','Peinture, Sols et murs'),
 ('mehdi@gmail.com', now(), now(), 'Intervention 5', 'ANNULEE', 'Intervention 5',0,'Avenue Sidi Moussa, Salé, Morocco','Peinture, Sols et murs');
