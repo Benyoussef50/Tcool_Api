@@ -95,17 +95,16 @@ public class InterventionController {
 		return impl.save(inter);
 	}
 
-	@PutMapping("/evaluer-status/{id}")
+	@PutMapping("/evaluer-status/{id}/{compteRendu}")
 	@Transactional
-	public Intervention evaluerStatus(@PathVariable Long id, @RequestBody Intervention inter) {
-		inter.setStatus("EVALUER");
-		return impl.save(inter);
+	public Intervention evaluerStatus(@PathVariable Long id, @PathVariable String compteRendu, @RequestBody Intervention inter) {
+		return impl.createCRIntervention("EVALUER", compteRendu, id);
 	}
 
-	@PutMapping("/cloturer-status/{id}")
+	@PutMapping("/cloturer-status/{id}/{evaluation}")
 	@Transactional
-	public Intervention cloturerStatus(@PathVariable Long id) {
-		return impl.update("CLOTUREE", id);
+	public Intervention cloturerStatus(@PathVariable Long id, @PathVariable String evaluation, @RequestBody Intervention inter) {
+		return impl.evaluateIntervention("CLOTUREE", evaluation, id);
 	}
 
 	@PutMapping("/add-message/{id}")

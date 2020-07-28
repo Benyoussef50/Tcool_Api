@@ -93,4 +93,32 @@ public class InterventionServiceImpl implements InterventionService {
 
 	}
 
+	// créer un compte rendu pour une intervention
+	@Override
+	public Intervention createCRIntervention(String status, String cr, Long id) {
+		Optional<Intervention> intervention = interventionRepository.findById(id);
+		if (intervention.isPresent()) {
+			Intervention inter = intervention.get();
+			inter.setStatus(status);
+			inter.setCompteRendu(cr);
+			return interventionRepository.save(inter);
+		} else {
+			throw new ElementNotFoundException(Intervention.class, id);
+		}
+	}
+
+	// donner une évaluation pour l'intervention
+	@Override
+	public Intervention evaluateIntervention(String status, String evaluation, Long id) {
+		Optional<Intervention> intervention = interventionRepository.findById(id);
+		if (intervention.isPresent()) {
+			Intervention inter = intervention.get();
+			inter.setStatus(status);
+			inter.setEvaluation(evaluation);
+			return interventionRepository.save(inter);
+		} else {
+			throw new ElementNotFoundException(Intervention.class, id);
+		}
+	}
+
 }
