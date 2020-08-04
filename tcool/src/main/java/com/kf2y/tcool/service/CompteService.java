@@ -13,6 +13,7 @@ public interface CompteService {
 	public Compte getByEmail(String email);
 	public List<Compte> getAllCompte();
 	public List<Compte> getAllIntervenants();
+	public List<Compte> getAllSyndics();
 	public List<Compte> addNotifsToSyndic(Notification n);
 	public List<Compte> addNotifsToInter(Notification n);
 	public List<Compte> addNotifsToResid(Notification n);
