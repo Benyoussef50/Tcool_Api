@@ -50,6 +50,12 @@ public class CompteServiceImpl implements CompteService {
 		// TODO Auto-generated method stub
 		return compteRepo.findAllIdInter();
 	}
+	
+	@Override
+	public List<Compte> getAllSyndics() {
+		// TODO Auto-generated method stub
+		return compteRepo.findAllSynd();
+	}
 
 	@Override
 	public List<Compte> addNotifsToSyndic(Notification n) {
@@ -152,5 +158,6 @@ public class CompteServiceImpl implements CompteService {
 			throw new RuntimeException("Could not find the user with email: " + email);
 		}
 	}
+
 
 }

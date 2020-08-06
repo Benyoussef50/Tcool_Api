@@ -84,6 +84,13 @@ public class CompteController {
 	public List<Compte> getAllIntervenants() {
 		return compteService.getAllIntervenants();
 	}
+	
+	// get all syndics
+	@GetMapping("/syndics")
+	public List<Compte> getAllSyndics() {
+		return compteService.getAllSyndics();
+	}
+	
 	// Notifier tous les syndics
 	@PostMapping("/notif-syndic")
 	public List<Compte> addNotifSyndic(@RequestBody Notification notification){
