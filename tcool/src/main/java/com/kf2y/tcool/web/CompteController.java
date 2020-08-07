@@ -4,6 +4,7 @@ package com.kf2y.tcool.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,9 @@ public class CompteController {
 	@Autowired
 	private CompteServiceImpl compteService;
 	
+	@Autowired
+	PasswordEncoder encoder;
+	
 	// get an account by its id
 	@GetMapping("/{id}")
 	public Compte getCompte(@PathVariable Long id) {
@@ -45,6 +49,7 @@ public class CompteController {
 	// save an account
 	@PostMapping("/save-account")
 	public Compte saveCompte(@RequestBody Compte compte) {
+		compte.setPassword(encoder.encode(compte.getPassword()));
 		return compteService.save(compte);
 	}
 	
@@ -58,7 +63,7 @@ public class CompteController {
 		c.setFirstName(compte.getFirstName());
 		c.setLastName(compte.getLastName());
 		c.setPhone(compte.getPhone());
-		c.setPassword(compte.getPassword());
+		c.setPassword(encoder.encode(compte.getPassword()));
 		c.setEmail(compte.getEmail());
 		c.setMyRole(compte.getMyRole());
 		
