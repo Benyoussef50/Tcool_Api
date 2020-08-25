@@ -101,4 +101,16 @@ public class DiscussionController {
 	public Discussion cloturerStatus(@PathVariable Long id) {
 		return discussService.update("CLOTUREE", id);
 	}
+	
+	/********************* get discussions by createdBy attribute and status*********************/
+	@GetMapping("/owned-by/{createdBy}/{status}")
+	public List<Discussion> getDiscussionsOwnBy(@PathVariable String createdBy, @PathVariable String status) {
+		return discussService.getOwnerDiscussions(createdBy, status);
+	}
+	
+	@GetMapping("/in-progress/owned-by/{createdBy}")
+	public List<Discussion> getDiscussionsInProgressOwnedBy(@PathVariable String createdBy) {
+		return discussService.getOwnerDiscussionsInProgress(createdBy);
+	}
+	
 }

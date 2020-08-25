@@ -121,4 +121,16 @@ public class InterventionServiceImpl implements InterventionService {
 		}
 	}
 
+	@Override
+	public List<Intervention> getOwnerInterventions(String createdBy, String status) {
+		// TODO Auto-generated method stub
+		return interventionRepository.findAllCreatedBy(createdBy, status);
+	}
+
+	@Override
+	public List<Intervention> getOwnerInterventionsInProgress(String createdBy) {
+		// TODO Auto-generated method stub
+		return interventionRepository.findAllInProgressCreatedByMe(createdBy);
+	}
+
 }

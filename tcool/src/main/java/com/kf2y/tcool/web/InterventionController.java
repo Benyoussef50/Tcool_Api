@@ -54,6 +54,16 @@ public class InterventionController {
 	public List<Intervention> getAll() {
 		return impl.findAllIntervention();
 	}
+	
+	@GetMapping("/owned-by/{createdBy}/{status}")
+	public List<Intervention> getIntersOwnedBy(@PathVariable String createdBy, @PathVariable String status) {
+		return impl.getOwnerInterventions(createdBy, status);
+	}
+	
+	@GetMapping("/in-progress/owned-by/{createdBy}")
+	public List<Intervention> getIntersInProgressOwnedBy(@PathVariable String createdBy) {
+		return impl.getOwnerInterventionsInProgress(createdBy);
+	}
 
 	@GetMapping("/encours")
 	public List<Intervention> getAllEnCours() {

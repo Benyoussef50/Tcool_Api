@@ -40,6 +40,16 @@ public class EvenementController {
 		return event.findAllEvents();
 	}
 	
+	@GetMapping("/owned-by/{createdBy}/{status}")
+	public List<Evenement> getEventsOwnedBy(@PathVariable String createdBy, @PathVariable String status) {
+		return event.getOwnerEvents(createdBy, status);
+	}
+	
+	@GetMapping("/in-progress/owned-by/{createdBy}")
+	public List<Evenement> getDiscussionsInProgressOwnedBy(@PathVariable String createdBy) {
+		return event.getOwnerEventsInProgress(createdBy);
+	}
+	
 	@GetMapping("/encours")
 	public List<Evenement> getAllEnCours(){
 		return event.findEventsEnCours();

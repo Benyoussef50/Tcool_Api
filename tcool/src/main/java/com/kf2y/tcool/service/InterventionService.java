@@ -58,6 +58,10 @@ public interface InterventionService {
 	 */
 
 	public List<Intervention> findInterAnnulees();
+	
+	public List<Intervention> getOwnerInterventions(String createdBy, String status);
+	
+	public List<Intervention> getOwnerInterventionsInProgress(String createdBy);
 
 	/**
 	 * Supprimer une intervention
@@ -67,3 +71,4 @@ public interface InterventionService {
 	public Intervention addMessages(Long id, Message msg);
 
 }
+ 

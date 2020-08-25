@@ -85,4 +85,16 @@ public class EvenementServiceImpl implements EvenementService {
 		
 	}
 
+	@Override
+	public List<Evenement> getOwnerEvents(String createdBy, String status) {
+		// TODO Auto-generated method stub
+		return evenementRepository.findAllCreatedBy(createdBy, status);
+	}
+
+	@Override
+	public List<Evenement> getOwnerEventsInProgress(String createdBy) {
+		// TODO Auto-generated method stub
+		return evenementRepository.findAllInProgressCreatedByMe(createdBy);
+	}
+
 }

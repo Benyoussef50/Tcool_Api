@@ -34,6 +34,10 @@ public interface EvenementService {
 	 *
 	 */
 	public List<Evenement> findAllEvents();
+	
+	public List<Evenement> getOwnerEvents(String createdBy, String status);
+	
+	public List<Evenement> getOwnerEventsInProgress(String createdBy);
 	/**
 	 *
 	 */

@@ -90,4 +90,16 @@ public class DiscussionServiceImpl implements DiscussionService {
 
 	}
 
+	@Override
+	public List<Discussion> getOwnerDiscussions(String createdBy, String status) {
+		// TODO Auto-generated method stub
+		return discussRepo.findAllCreatedBy(createdBy, status);
+	}
+
+	@Override
+	public List<Discussion> getOwnerDiscussionsInProgress(String createdBy) {
+		// TODO Auto-generated method stub
+		return discussRepo.findAllInProgressCreatedByMe(createdBy);
+	}
+
 }

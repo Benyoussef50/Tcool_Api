@@ -3,7 +3,6 @@ package com.kf2y.tcool.service;
 import java.util.List;
 
 import com.kf2y.tcool.domain.Discussion;
-
 import com.kf2y.tcool.domain.Message;
 
 
@@ -33,4 +32,9 @@ public interface DiscussionService {
 	 * Update status
 	 */
 	public Discussion update(String status, Long id);
+	
+	// get discussions by its owner
+	public List<Discussion> getOwnerDiscussions(String createdBy, String status);
+	
+	public List<Discussion> getOwnerDiscussionsInProgress(String createdBy);
 }
