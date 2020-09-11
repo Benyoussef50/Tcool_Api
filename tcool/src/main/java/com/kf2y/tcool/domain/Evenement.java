@@ -1,5 +1,6 @@
 package com.kf2y.tcool.domain;
 
+import java.sql.Date;
 import java.time.LocalTime;
 
 import java.util.List;
@@ -34,6 +35,9 @@ public class Evenement extends AbstractAuditingEntity {
 	private String status;
 	
 	private LocalTime duration;
+	
+	//date event add 
+	private Date eventDate;
 	
 	
 	
