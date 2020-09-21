@@ -49,7 +49,7 @@ public class SendingMailService {
     	try {
     		   
     		SimpleMailMessage email = new SimpleMailMessage();
-    		email.setFrom("kanssougiba1997@gmail.com");
+    		email.setFrom("tcoolconsulting@gmail.com");
             email.setTo(toEmail);
             email.setSubject(subject);
             email.setText(body);
