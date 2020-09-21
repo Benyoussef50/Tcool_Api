@@ -2,12 +2,13 @@ package com.kf2y.tcool.web;
 
 import java.util.LinkedList;
 import java.util.List;
-
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.kf2y.tcool.domain.AppRole;
 import com.kf2y.tcool.domain.Compte;
@@ -31,6 +34,7 @@ import com.kf2y.tcool.security.MessageResponse;
 import com.kf2y.tcool.security.SignUpRequest;
 import com.kf2y.tcool.service.UserDetailsImpl;
 import com.kf2y.tcool.service.UserDetailsServiceImpl;
+import com.kf2y.tcool.service.emailVerification.VerificationTokenService;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -53,6 +57,11 @@ public class AuthController {
 
 	@Autowired
 	PasswordEncoder encoder;
+	
+	// email verification 
+	  @Autowired
+	    VerificationTokenService verificationTokenService;
+	  
 
 	@PostMapping(value = "/login")
 	public ResponseEntity<?> createAuthenticationToken(@Valid @RequestBody JwtAuthenticationRequest authRequest) {
@@ -121,8 +130,37 @@ public class AuthController {
 		}
 		
 		compte.setMyRole(roles);
-		compteRepository.save(compte);
+		try {
+			compteRepository.save(compte);
+			verificationTokenService.createVerification(compte);
+		}catch(Exception re) {
+			re.printStackTrace();
+		}
 
 		return ResponseEntity.ok(new MessageResponse("Compte registered successfully!"));
 	}
+	
+	//--------------------------- system of email verification -------------------------
+	
+
+    @PostMapping("/verify-email")
+    public ResponseEntity<MessageResponse> verifyEmail(@RequestBody Map<String, Object> payload) {
+    	String code = (String) payload.get("code");
+
+    	System.out.println(payload.get("code"));
+    	System.out.println("********************");
+    	if(code!=null) {
+    		System.out.println(code);
+    	}
+    	else {
+    		System.out.println("no code");
+    	}
+        Compte c = verificationTokenService.verifyEmail(code);
+        if(c!=null) {
+        return ResponseEntity.ok(new MessageResponse("Compte registered successfully!"));//verificationTokenService.verifyEmail(code).getBody();
+        }
+        else {
+        	throw new ResponseStatusException(HttpStatus.BAD_REQUEST," code error ");
+        }
+    }
 }

@@ -17,7 +17,6 @@ public class FilesStorageServiceImpl implements FilesStorageService {
 	private final Path audiosDirectory = Paths.get("src/main/resources/audios/");
 	private final Path imagesDirectory = Paths.get("src/main/resources/images/");
 	
-	//private final Path root = Paths.get("src/main/resources/uploads");
 	
 	private final Path root = Paths.get("src/main/resources/uploads/");
 

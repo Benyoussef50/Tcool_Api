@@ -35,6 +35,12 @@ public class Compte extends AbstractAuditingEntity {
 
 	private String password;
 	
+	private Boolean isActive;
+	
+	
+	//verification token
+   // private VerificationToken verificationToken;
+	
 	// mon rôle
 	@ManyToMany()
 	private List<AppRole> myRole;
@@ -75,6 +81,8 @@ public class Compte extends AbstractAuditingEntity {
 		this.email = email;
 		this.phone = phone;
 		this.password = password;
+		this.isActive =false;
 	}
+	
 
 }
