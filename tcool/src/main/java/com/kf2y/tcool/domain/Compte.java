@@ -7,8 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Type;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,7 +27,8 @@ public class Compte extends AbstractAuditingEntity {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCompte;
-
+	
+	
 	private String firstName;
 
 	private String lastName;
@@ -36,6 +40,9 @@ public class Compte extends AbstractAuditingEntity {
 	private String password;
 	
 	private Boolean isActive;
+	
+	@Lob
+	private byte[] avatar;
 	
 	
 	//verification token
@@ -82,6 +89,7 @@ public class Compte extends AbstractAuditingEntity {
 		this.phone = phone;
 		this.password = password;
 		this.isActive =false;
+		this.avatar=null;
 	}
 	
 

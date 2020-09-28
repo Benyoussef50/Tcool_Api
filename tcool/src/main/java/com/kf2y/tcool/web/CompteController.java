@@ -66,6 +66,7 @@ public class CompteController {
 		c.setPassword(encoder.encode(compte.getPassword()));
 		c.setEmail(compte.getEmail());
 		c.setMyRole(compte.getMyRole());
+		c.setAvatar(compte.getAvatar());
 		
 		return compteService.save(c);
 	}
