@@ -68,7 +68,8 @@ public class CompteController {
 		c.setMyRole(compte.getMyRole());
 		c.setAvatar(compte.getAvatar());
 		
-		return compteService.save(c);
+		compteService.save(c);
+		return compteService.getById(id);
 	}
 	
 	// delete an account
