@@ -9,7 +9,8 @@ INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `passwor
 ('KF2Y','kondi-mane','robbile','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
 ('KF2Y','test1','test2','test1@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0604370707',now(),now(),0),
 ('KF2Y','test2','test2','test2@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
-('KF2Y','said','bendrioue','said@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
+('KF2Y','said','bendrioue','said@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
+('KF2Y','kans','kant','kans@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
 ;
 
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
@@ -17,19 +18,20 @@ INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 (2, 1),
 (3, 3),
 (4, 3),
-(5, 2)
+(5, 2),
+(6,3)
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`, `theme`) VALUES
-('robb@gmail.com', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0, 'Relation avec le syndic'),
-('robb@gmail.com', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0,'Relation avec le syndic'),
-('robb@gmail.com', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0, 'Relation avec le syndic'),
-('robb@gmail.com', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0, 'Relation avec le syndic'),
-('robb@gmail.com', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0, 'Relation avec le syndic'),
-('robb@gmail.com', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0, 'Relation avec le syndic'),
-('robb@gmail.com', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0, 'Relation avec le syndic'),
-('robb@gmail.com', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public', 0, 'Relation avec le syndic'),
-('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0, 'Relation avec le syndic');
+('robb@gmail.com', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0, '	syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0,'	syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0, '	syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0, '	syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0, '	syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0, '	syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0, '	syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public', 0, '	syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0, '	syndic_rel');
 
 INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`,`version`,`location`,`theme`) VALUES
 ('robb@gmail.com', now(), now(), 'Intervention 1', 'VALIDER', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','Peinture, Sols et murs'),
@@ -38,16 +40,16 @@ INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, 
 ('mehdi@gmail.com', now(), now(), 'Intervention 4', 'CLOTUREE', 'Intervention 4',0,'20 Rue Ghana, Rabat, Morocco','Peinture, Sols et murs'),
 ('mehdi@gmail.com', now(), now(), 'Intervention 5', 'ANNULEE', 'Intervention 5',0,'Avenue Sidi Moussa, Salé, Morocco','Peinture, Sols et murs');
 
-INSERT INTO `Evenement` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`,`duration`) VALUES
-('mehdi@gmail.com', now(), now(), 'Evenement 1', 'EN COURS', 'Evenement 1', 'Public', 0,'2:8:1'),
-('mehdi@gmail.com', now(), now(), 'Evenement 2', 'EN COURS', 'Evenement 2', 'Public', 0,'2:8:1'),
-('mehdi@gmail.com', now(), now(), 'Evenement 3', 'EN COURS', 'Evenement 3', 'Public', 0,'2:8:1'),
-('mehdi@gmail.com', now(), now(), 'Evenement 4', 'EN COURS', 'Evenement 4', 'Public', 0,'2:8:1'),
-('mehdi@gmail.com', now(), now(), 'Evenement 5', 'CLOTUREE', 'Evenement 5', 'Public', 0,'2:8:1'),
-('mehdi@gmail.com', now(), now(), 'Evenement 6', 'CLOTUREE', 'Evenement 6', 'Public', 0,'2:8:1'),
-('mehdi@gmail.com', now(), now(), 'Evenement 7', 'REJETEE', 'Evenement 7', 'Public', 0,'2:8:1'),
-('mehdi@gmail.com', now(), now(), 'Evenement 8', 'REJETEE', 'Evenement 8', 'Public', 0,'2:8:1'),
-('mehdi@gmail.com', now(), now(), 'Evenement 9', 'REJETEE', 'Evenement 9', 'Public', 0,'2:8:1');
+INSERT INTO `Evenement` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`,`duration`,`event_date`) VALUES
+('mehdi@gmail.com', now(), now(), 'Evenement 1', 'EN COURS', 'Evenement 1', 'Public', 0,'2:8:1','2020-09-10'),
+('mehdi@gmail.com', now(), now(), 'Evenement 2', 'EN COURS', 'Evenement 2', 'Public', 0,'2:8:1','2020-09-10'),
+('mehdi@gmail.com', now(), now(), 'Evenement 3', 'EN COURS', 'Evenement 3', 'Public', 0,'2:8:1','2020-09-10'),
+('mehdi@gmail.com', now(), now(), 'Evenement 4', 'EN COURS', 'Evenement 4', 'Public', 0,'2:8:1','2020-09-10'),
+('mehdi@gmail.com', now(), now(), 'Evenement 5', 'CLOTUREE', 'Evenement 5', 'Public', 0,'2:8:1','2020-09-10'),
+('mehdi@gmail.com', now(), now(), 'Evenement 6', 'CLOTUREE', 'Evenement 6', 'Public', 0,'2:8:1','2020-09-10'),
+('mehdi@gmail.com', now(), now(), 'Evenement 7', 'REJETEE', 'Evenement 7', 'Public', 0,'2:8:1','2020-09-10'),
+('mehdi@gmail.com', now(), now(), 'Evenement 8', 'REJETEE', 'Evenement 8', 'Public', 0,'2:8:1','2020-09-10'),
+('mehdi@gmail.com', now(), now(), 'Evenement 9', 'REJETEE', 'Evenement 9', 'Public', 0,'2:8:1','2020-09-10');
 INSERT INTO `Copropriete` (`created_by`, `created_date`, `last_modified_date`, `name`,`details`, `city`,`version`,`nb_residents`, `syndic_id_compte`) VALUES
 ('robb@gmail.com', now(), now(), 'Copropriete 1', 'EN COURS', 'Casa',0,14, '1'),
 ('robb@gmail.com', now(), now(), 'Copropriete 2', 'EN COURS', 'Marrakech',0,14, '1'),
