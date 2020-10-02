@@ -23,15 +23,15 @@ INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`, `theme`) VALUES
-('robb@gmail.com', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0, '	syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0,'	syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0, '	syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0, '	syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0, '	syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0, '	syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0, '	syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public', 0, '	syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0, '	syndic_rel');
+('robb@gmail.com', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0, 'syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0,'syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0, 'syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0, 'syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0, 'syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0, 'syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0, 'syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public', 0, 'syndic_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0, 'syndic_rel');
 
 INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`,`version`,`location`,`theme`) VALUES
 ('robb@gmail.com', now(), now(), 'Intervention 1', 'VALIDER', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','peinture'),
