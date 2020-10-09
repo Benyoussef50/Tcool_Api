@@ -32,6 +32,10 @@ public class Compte extends AbstractAuditingEntity {
 	private String firstName;
 
 	private String lastName;
+	
+	private String immeuble;
+	
+	private String appartement;
 
 	private String email;
 
@@ -80,11 +84,13 @@ public class Compte extends AbstractAuditingEntity {
 	}
 
 
-	public Compte(String createdBy ,String firstName, String lastName, String email, String phone, String password) {
+	public Compte(String createdBy ,String firstName, String lastName,String immeuble,String appartement, String email, String phone, String password) {
 		super();
 		super.setCreatedBy(createdBy);
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.immeuble = immeuble;
+		this.appartement = appartement;
 		this.email = email;
 		this.phone = phone;
 		this.password = password;

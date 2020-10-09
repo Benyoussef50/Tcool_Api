@@ -20,6 +20,10 @@ public class SignUpRequest implements Serializable{
 	private String firstName;
 
 	private String lastName;
+	
+	private String immeuble;
+	
+	private String appartement;
 
 	private String email;
 

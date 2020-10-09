@@ -96,7 +96,7 @@ public class AuthController {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Login is already taken!"));
 		}
 
-		Compte compte = new Compte(signUpRequest.getCreatedBy(),signUpRequest.getFirstName(), signUpRequest.getLastName(), signUpRequest.getEmail(),
+		Compte compte = new Compte(signUpRequest.getCreatedBy(),signUpRequest.getFirstName(), signUpRequest.getLastName(),signUpRequest.getImmeuble(),signUpRequest.getAppartement(), signUpRequest.getEmail(),
 				signUpRequest.getPhone(), encoder.encode(signUpRequest.getPassword()));
 
 		String role = signUpRequest.getMyRole();
