@@ -62,6 +62,8 @@ public class CompteController {
 		if(c == null) throw new ResourceNotFoundException("Account not found on :: "+ compte.getIdCompte());
 		c.setFirstName(compte.getFirstName());
 		c.setLastName(compte.getLastName());
+		c.setImmeuble(compte.getImmeuble());
+		c.setAppartement(compte.getAppartement());
 		c.setPhone(compte.getPhone());
 		c.setPassword(encoder.encode(compte.getPassword()));
 		c.setEmail(compte.getEmail());
