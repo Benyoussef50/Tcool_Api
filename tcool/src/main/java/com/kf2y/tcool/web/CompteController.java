@@ -94,16 +94,16 @@ public class CompteController {
 		return compteService.getAllIntervenants();
 	}
 	
-	// get all syndics
-	@GetMapping("/syndics")
-	public List<Compte> getAllSyndics() {
-		return compteService.getAllSyndics();
+	// get all gestionnaires
+	@GetMapping("/gestionnaire")
+	public List<Compte> getAllGestionnaires() {
+		return compteService.getAllGestionnaires();
 	}
 	
-	// Notifier tous les syndics
-	@PostMapping("/notif-syndic")
-	public List<Compte> addNotifSyndic(@RequestBody Notification notification){
-		return compteService.addNotifsToSyndic(notification);
+	// Notifier tous les gestionnaires
+	@PostMapping("/notif-gestionnaire")
+	public List<Compte> addNotifGestionnaire(@RequestBody Notification notification){
+		return compteService.addNotifsToGestionnaire(notification);
 	}
 	
 	// Notifier tous les intervenants

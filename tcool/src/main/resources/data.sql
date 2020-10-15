@@ -1,16 +1,16 @@
 INSERT INTO `APP_Role` (`id`, `role`) VALUES
 (1, 'RESIDENT'),
-(2, 'SYNDIC'),
+(2, 'GESTIONNAIRE'),
 (3, 'INTERVENANT'),
 (4, 'ADMIN');
 
-INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`, `email`, `password`, `phone`, `created_date`,`last_modified_date`,`version` ) VALUES
-('KF2Y','mehdi','benyoussef','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',now(),now(),0),
-('KF2Y','kondi-mane','robbile','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
-('KF2Y','test1','test2','test1@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0604370707',now(),now(),0),
-('KF2Y','test2','test2','test2@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
-('KF2Y','said','bendrioue','said@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
-('KF2Y','kans','kant','kans@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
+INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`,`immeuble`,`appartement`, `email`, `password`, `phone`, `created_date`,`last_modified_date`,`version` ) VALUES
+('KF2Y','mehdi','benyoussef','94','3','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',now(),now(),0),
+('KF2Y','kondi-mane','robbile','94','3','robb@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
+('KF2Y','test1','test2','94','3','test1@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0604370707',now(),now(),0),
+('KF2Y','test2','test2','94','3','test2@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
+('KF2Y','said','bendrioue','94','3','said@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0),
+('KF2Y','kans','kant','94','3','kans@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0607070707',now(),now(),0)
 ;
 
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
@@ -23,15 +23,15 @@ INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
 ;
 
 INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`, `theme`) VALUES
-('robb@gmail.com', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0, 'syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0,'syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0, 'syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0, 'syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0, 'syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0, 'syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0, 'syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public', 0, 'syndic_rel'),
-('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0, 'syndic_rel');
+('robb@gmail.com', now(), now(), 'Discussion 1', 'EN COURS', 'Discussion 1', 'Public', 0, 'gestionnaire_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 2', 'EN COURS', 'Discussion 2', 'Public', 0,'gestionnaire_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 3', 'EN COURS', 'Discussion 3', 'Public', 0, 'gestionnaire_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 4', 'EN COURS', 'Discussion 4', 'Public', 0, 'gestionnaire_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 5', 'CLOTUREE', 'Discussion 5', 'Public', 0, 'gestionnaire_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 6', 'CLOTUREE', 'Discussion 6', 'Public', 0, 'gestionnaire_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 7', 'REJETEE', 'Discussion 7', 'Public', 0, 'gestionnaire_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 8', 'REJETEE', 'Discussion 8', 'Public', 0, 'gestionnaire_rel'),
+('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0, 'gestionnaire_rel');
 
 INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`,`version`,`location`,`theme`) VALUES
 ('robb@gmail.com', now(), now(), 'Intervention 1', 'VALIDER', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','peinture'),
@@ -50,7 +50,7 @@ INSERT INTO `Evenement` (`created_by`, `created_date`, `last_modified_date`, `de
 ('mehdi@gmail.com', now(), now(), 'Evenement 7', 'REJETEE', 'Evenement 7', 'Public', 0,'2:8:1','2020-09-10'),
 ('mehdi@gmail.com', now(), now(), 'Evenement 8', 'REJETEE', 'Evenement 8', 'Public', 0,'2:8:1','2020-09-10'),
 ('mehdi@gmail.com', now(), now(), 'Evenement 9', 'REJETEE', 'Evenement 9', 'Public', 0,'2:8:1','2020-09-10');
-INSERT INTO `Copropriete` (`created_by`, `created_date`, `last_modified_date`, `name`,`details`, `city`,`version`,`nb_residents`, `syndic_id_compte`) VALUES
+INSERT INTO `Copropriete` (`created_by`, `created_date`, `last_modified_date`, `name`,`details`, `city`,`version`,`nb_residents`, `gestionnaire_id_compte`) VALUES
 ('robb@gmail.com', now(), now(), 'Copropriete 1', 'EN COURS', 'Casa',0,14, '1'),
 ('robb@gmail.com', now(), now(), 'Copropriete 2', 'EN COURS', 'Marrakech',0,14, '1'),
 ('robb@gmail.com', now(), now(), 'Copropriete 3', 'EN COURS', 'Rabat',0,8,'1'),

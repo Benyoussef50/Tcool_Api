@@ -109,10 +109,10 @@ public class AuthController {
 
 		} else {
 			switch (role) {
-			case "SYNDIC":
-				AppRole syndicRole = appRoleRepository.findByRole("SYNDIC")
+			case "GESTIONNAIRE":
+				AppRole gestionnaireRole = appRoleRepository.findByRole("GESTIONNAIRE")
 						.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-				roles.add(syndicRole);
+				roles.add(gestionnaireRole);
 				break;
 
 			case "INTERVENANT":

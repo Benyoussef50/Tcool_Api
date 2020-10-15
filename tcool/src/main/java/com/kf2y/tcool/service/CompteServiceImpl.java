@@ -52,14 +52,14 @@ public class CompteServiceImpl implements CompteService {
 	}
 	
 	@Override
-	public List<Compte> getAllSyndics() {
+	public List<Compte> getAllGestionnaires() {
 		// TODO Auto-generated method stub
-		return compteRepo.findAllSynd();
+		return compteRepo.findAllGestion();
 	}
 
 	@Override
-	public List<Compte> addNotifsToSyndic(Notification n) {
-		List<Compte> comptes = compteRepo.findAllSynd();
+	public List<Compte> addNotifsToGestionnaire(Notification n) {
+		List<Compte> comptes = compteRepo.findAllGestion();
 		for(Compte c : comptes) {
 		   c.getMyNotifications().add(n);
 		   	}

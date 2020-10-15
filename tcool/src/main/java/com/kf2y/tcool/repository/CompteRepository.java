@@ -26,7 +26,7 @@ public interface CompteRepository extends JpaRepository<Compte, Long> {
 			+ " ON c.ID_COMPTE = cr.COMPTE_ID_COMPTE "
 			+ "where cr.MY_ROLE_ID =2"
 			, nativeQuery = true)
-	public List<Compte> findAllSynd();
+	public List<Compte> findAllGestion();
 	
 	@Query(value="SELECT c.* from `COMPTE` c INNER JOIN `COMPTE_MY_ROLE` cr"
 			+ " ON c.ID_COMPTE = cr.COMPTE_ID_COMPTE "

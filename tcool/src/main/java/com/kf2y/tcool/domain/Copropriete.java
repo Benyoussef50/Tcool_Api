@@ -29,7 +29,7 @@ public class Copropriete extends AbstractAuditingEntity {
 	private String details;
 
 	@ManyToOne()
-	private Compte syndic;
+	private Compte gestionnaire;
 
 	private int nbResidents;
 
