@@ -54,4 +54,9 @@ public class CoproprieteController {
 		
 		return copropServ.save(newCop);
 	}
+	
+	@GetMapping("/all/{id}")
+	public List<Copropriete> getAllCopropritesbyCompte(@PathVariable Long id){
+		return copropServ.getByCompte(id);
+	}
 }

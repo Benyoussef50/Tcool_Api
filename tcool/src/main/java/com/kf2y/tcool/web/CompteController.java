@@ -95,7 +95,7 @@ public class CompteController {
 	}
 	
 	// get all gestionnaires
-	@GetMapping("/gestionnaire")
+	@GetMapping("/gestionnaires")
 	public List<Compte> getAllGestionnaires() {
 		return compteService.getAllGestionnaires();
 	}

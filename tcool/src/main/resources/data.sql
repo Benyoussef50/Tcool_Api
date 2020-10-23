@@ -86,3 +86,9 @@ INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, 
 
 INSERT INTO `compte_my_notifications` VALUES
 (2,1),(2,2),(2,5);
+
+INSERT INTO `Code` ( `content`) VALUES
+(100000),
+(200000),
+(222222),
+(123456);

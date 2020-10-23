@@ -3,6 +3,7 @@ package com.kf2y.tcool.service;
 import java.util.List;
 
 import com.kf2y.tcool.domain.Compte;
+import com.kf2y.tcool.domain.Copropriete;
 import com.kf2y.tcool.domain.Notification;
 
 public interface CompteService {
@@ -22,4 +23,5 @@ public interface CompteService {
 	public List<Notification> getNoReadNotif(Long id);
 	public Compte getNoReadNotifcpt(Long id);
 	public List<Notification> getReadNotif(Long id);
+
 }

@@ -43,4 +43,13 @@ public class CoproprieteServiceImpl implements CoproprieteService {
 		} else return cop;
 	}
 
+	@Override
+	public List<Copropriete> getByCompte(Long id) {
+		// TODO Auto-generated method stub
+		List<Copropriete> cop =  coproprieteRepo.findAllCopByCompte(id);
+		if(cop == null) {
+			throw new RuntimeException("Copropriété avec id= "+id+" introuvable!");
+		} else return cop;
+	}
+
 }

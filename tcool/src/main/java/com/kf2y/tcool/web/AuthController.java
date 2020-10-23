@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.kf2y.tcool.domain.AppRole;
+import com.kf2y.tcool.domain.Code;
 import com.kf2y.tcool.domain.Compte;
 import com.kf2y.tcool.repository.AppRoleRepository;
 import com.kf2y.tcool.repository.CompteRepository;
@@ -32,6 +33,7 @@ import com.kf2y.tcool.security.JwtAuthenticationResponse;
 import com.kf2y.tcool.security.JwtTokenUtil;
 import com.kf2y.tcool.security.MessageResponse;
 import com.kf2y.tcool.security.SignUpRequest;
+import com.kf2y.tcool.service.CodeServiceImpl;
 import com.kf2y.tcool.service.UserDetailsImpl;
 import com.kf2y.tcool.service.UserDetailsServiceImpl;
 import com.kf2y.tcool.service.emailVerification.VerificationTokenService;
@@ -57,6 +59,9 @@ public class AuthController {
 
 	@Autowired
 	PasswordEncoder encoder;
+	
+	@Autowired
+	private CodeServiceImpl codeService;
 	
 	// email verification 
 	  @Autowired
@@ -158,6 +163,27 @@ public class AuthController {
         Compte c = verificationTokenService.verifyEmail(code);
         if(c!=null) {
         return ResponseEntity.ok(new MessageResponse("Compte registered successfully!"));//verificationTokenService.verifyEmail(code).getBody();
+        }
+        else {
+        	throw new ResponseStatusException(HttpStatus.BAD_REQUEST," code error ");
+        }
+    }
+    
+    @PostMapping("/verify-code")
+    public ResponseEntity<MessageResponse> verifyCode(@RequestBody Map<String, Object> payload) {
+    	String code = (String) payload.get("code");
+
+    	System.out.println(payload.get("code"));
+    	System.out.println("********************");
+    	if(code!=null) {
+    		System.out.println(code);
+    	}
+    	else {
+    		System.out.println("no code");
+    	}
+        Code c = codeService.getByCode(code);
+        if(c!=null) {
+        return ResponseEntity.ok(new MessageResponse(c.getContent()));//verificationTokenService.verifyEmail(code).getBody();
         }
         else {
         	throw new ResponseStatusException(HttpStatus.BAD_REQUEST," code error ");

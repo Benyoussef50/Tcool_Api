@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,6 +39,10 @@ public class Evenement extends AbstractAuditingEntity {
 	
 	//date event add 
 	private Date eventDate;
+	
+	@Lob
+	//document add  
+	private byte[] document;
 	
 	
 	

@@ -10,4 +10,5 @@ public interface CoproprieteService {
 	public void delete(Long id);
 	public List<Copropriete> getAllCopropriete();
 	public Copropriete getById(Long id);
+	public List<Copropriete> getByCompte(Long id);
 }
