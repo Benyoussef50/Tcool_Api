@@ -87,8 +87,8 @@ INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, 
 INSERT INTO `compte_my_notifications` VALUES
 (2,1),(2,2),(2,5);
 
-INSERT INTO `Code` ( `content`) VALUES
-(100000),
-(200000),
-(222222),
-(123456);
+INSERT INTO `Code` ( `content`,`status`) VALUES
+(100000,'FREE'),
+(200000,'FREE'),
+(222222,'FREE'),
+(123456,'FREE');

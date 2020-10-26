@@ -183,6 +183,8 @@ public class AuthController {
     	}
         Code c = codeService.getByCode(code);
         if(c!=null) {
+        	c.setStatus("USED");
+        	codeService.save(c);
         return ResponseEntity.ok(new MessageResponse(c.getContent()));//verificationTokenService.verifyEmail(code).getBody();
         }
         else {
