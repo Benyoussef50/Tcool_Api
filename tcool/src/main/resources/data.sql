@@ -77,12 +77,12 @@ INSERT INTO `Operation` (`created_by`, `created_date`, `last_modified_date`, `ti
 ('robb@gmail.com', now(), now(), 'Opération 13', 'DEBIT', 200, 0),
 ('robb@gmail.com', now(), now(), 'Opération 14', 'CREDIT', 200, 0);
 
-INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, `message`,`is_read`,`version`, `theme`) VALUES
-('mehdi@gmail.com', now(), now(), 'Notification 1', false,0,'DISCUSSION'),
-('mehdi@gmail.com', now(), now(), 'Notification 2', false,0, 'DISCUSSION'),
-('robb@gmail.com', now(), now(), 'Notification 3', false,0,'EVENEMENT'),
-('robb@gmail.com', now(), now(), 'Notification 4', false,0,'EVENEMENT'),
-('robb@gmail.com', now(), now(), 'Notification 5', false,0,'INTERVENTION');
+INSERT INTO `Notification` (`created_by`, `created_date`, `last_modified_date`, `message`,`is_read`,`version`, `theme`,`parent_id`) VALUES
+('mehdi@gmail.com', now(), now(), 'Notification 1', false,0,'DISCUSSION',1),
+('mehdi@gmail.com', now(), now(), 'Notification 2', false,0, 'DISCUSSION',1),
+('robb@gmail.com', now(), now(), 'Notification 3', false,0,'EVENEMENT',1),
+('robb@gmail.com', now(), now(), 'Notification 4', false,0,'EVENEMENT',1),
+('robb@gmail.com', now(), now(), 'Notification 5', false,0,'INTERVENTION',1);
 
 INSERT INTO `compte_my_notifications` VALUES
 (2,1),(2,2),(2,5);
