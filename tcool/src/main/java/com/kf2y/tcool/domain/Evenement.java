@@ -40,9 +40,9 @@ public class Evenement extends AbstractAuditingEntity {
 	//date event add 
 	private Date eventDate;
 	
-	@Lob
+	//@Lob
 	//document add  
-	private byte[] document;
+	//private byte[] document;
 	
 	
 	

@@ -21,6 +21,16 @@ public class EvenementDocs extends AbstractAuditingEntity {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idEventDoc;
+	
+	//Modify 11-11-2020
+	
+	private String name;
+	
+	private String content;
+	
+	private String extension;
+	
+	
 
 	public EvenementDocs() {
 	}
