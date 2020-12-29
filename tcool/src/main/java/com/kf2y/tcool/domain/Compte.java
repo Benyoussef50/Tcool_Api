@@ -79,6 +79,9 @@ public class Compte extends AbstractAuditingEntity {
 	@OneToMany()
 	private List<Copropriete> coproprietes;
 	
+	@OneToMany()
+	private List<Artisan> myArtisans;
+	
 
 	public Compte() {
 	}

@@ -92,3 +92,12 @@ INSERT INTO `Code` ( `content`,`status`) VALUES
 (200000,'FREE'),
 (222222,'FREE'),
 (123456,'FREE');
+
+INSERT INTO `Artisan` (`created_by`, `last_name`, `first_name`,`domaine`,`telephone`, `adresse`, `note`, `created_date`,`last_modified_date`,`version` ) VALUES
+('mehdi@gmail.com','mehdi','benyoussef','Plomberie','0604370707','Paris Liège Bd Paul',3.5,now(),now(),0),
+('robb@gmail.com','kondi-mane','robbile','Décoration','0604370707','Marrakech Saada',4.5,now(),now(),0),
+('kans@gmail.com','test1','test2','Plastique','0604370707','Casablanca Abdel Moumen',3.6,now(),now(),0),
+('kans@gmail.com','test2','test2','Plastique','0604370707','Casablanca Florida Apt 4',4.1,now(),now(),0),
+('mehdi@gmail.com','said','bendrioue','Hotellier','0604370707','Casablanca Ain Chock',4.2,now(),now(),0),
+('mehdi@gmail.com','kans','kant','Plastique','0604370707','Casablanca Sidi Maarouf',3.6,now(),now(),0)
+;
