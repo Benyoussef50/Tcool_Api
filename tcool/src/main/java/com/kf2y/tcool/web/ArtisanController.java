@@ -71,7 +71,7 @@ public class ArtisanController {
 			for(Note not : myNotes) {
 				   myNote = myNote + not.getValeur();
 				}
-			myNote = (myNote)/(myNotes.size());
+			myNote = Math.round(((myNote)/(myNotes.size()))*10.0)/10.0;
 			a.setNote(myNote);
 			System.out.println("my Artisan ");
 			System.out.print(myNote);
