@@ -1,8 +1,7 @@
 INSERT INTO `APP_Role` (`id`, `role`) VALUES
 (1, 'RESIDENT'),
-(2, 'GESTIONNAIRE'),
-(3, 'INTERVENANT'),
-(4, 'ADMIN');
+(2, 'SYNDIC'),
+(3, 'ASSISTANTE');
 
 INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`,`immeuble`,`appartement`, `email`, `password`, `phone`, `created_date`,`last_modified_date`,`version` ) VALUES
 ('KF2Y','mehdi','benyoussef','94','3','mehdi@gmail.com','$2a$10$zgK6QKoz6ftlCHYMe/2wj.MDsK9l5Tj2zg1n3hLMuOf2KvP7FvRJG', '0606060606',now(),now(),0),
@@ -14,11 +13,11 @@ INSERT INTO `Compte` (`created_by`, `first_name`, `last_name`,`immeuble`,`appart
 ;
 
 INSERT INTO `compte_my_role` (`compte_id_compte`, `my_role_id`) VALUES
-(1, 4),
+(1, 3),
 (2, 1),
-(3, 3),
-(4, 3),
-(5, 2),
+(3, 2),
+(4, 2),
+(5, 1),
 (6,3)
 ;
 
