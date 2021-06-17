@@ -33,11 +33,11 @@ INSERT INTO `Discussion` (`created_by`, `created_date`, `last_modified_date`, `d
 ('robb@gmail.com', now(), now(), 'Discussion 9', 'REJETEE', 'Discussion 9', 'Public', 0, 'gestionnaire_rel');
 
 INSERT INTO `Intervention` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`,`version`,`location`,`theme`) VALUES
-('robb@gmail.com', now(), now(), 'Intervention 1', 'VALIDER', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','peinture'),
-('robb@gmail.com', now(), now(), 'Intervention 2', 'VALIDER', 'Intervention 2',0,'22 Avenue Michlifen, Rabat 10080, Morocco','peinture'),
-('mehdi@gmail.com', now(), now(), 'Intervention 3', 'VALIDER', 'Intervention 3',0,'n10 Rue el Baoudi, Rabat 10000, Morocco','peinture'),
-('mehdi@gmail.com', now(), now(), 'Intervention 4', 'CLOTUREE', 'Intervention 4',0,'20 Rue Ghana, Rabat, Morocco','peinture'),
-('mehdi@gmail.com', now(), now(), 'Intervention 5', 'ANNULEE', 'Intervention 5',0,'Avenue Sidi Moussa, Salé, Morocco','peinture');
+('robb@gmail.com', now(), now(), 'Intervention 1', 'VALIDER', 'Intervention 1',0,'13 Rue Al Adarissa, Rabat 10020, Morocco','c_technical'),
+('robb@gmail.com', now(), now(), 'Intervention 2', 'VALIDER', 'Intervention 2',0,'22 Avenue Michlifen, Rabat 10080, Morocco','c_administrative'),
+('mehdi@gmail.com', now(), now(), 'Intervention 3', 'VALIDER', 'Intervention 3',0,'n10 Rue el Baoudi, Rabat 10000, Morocco','c_technical'),
+('mehdi@gmail.com', now(), now(), 'Intervention 4', 'CLOTUREE', 'Intervention 4',0,'20 Rue Ghana, Rabat, Morocco','c_technical'),
+('mehdi@gmail.com', now(), now(), 'Intervention 5', 'ANNULEE', 'Intervention 5',0,'Avenue Sidi Moussa, Salé, Morocco','c_recovery');
 
 INSERT INTO `Evenement` (`created_by`, `created_date`, `last_modified_date`, `details`,`status`, `title`, `visibility`, `version`,`duration`,`event_date`) VALUES
 ('mehdi@gmail.com', now(), now(), 'Evenement 1', 'EN COURS', 'Evenement 1', 'Public', 0,'2:8:1','2020-09-10'),
